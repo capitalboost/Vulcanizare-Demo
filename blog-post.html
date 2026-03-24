@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog VulcaPro — Sfaturi despre anvelope, geometrie și întreținere auto din București." />
+  <title id="page-title">Blog — VulcaPro</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230A0A0A'/%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23DC2626' stroke-width='4'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23DC2626'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%230A0A0A'/%3E%3C/svg%3E" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Barlow',sans-serif;background:#0A0A0A;color:#F5F5F5;overflow-x:hidden}
+
+    #navbar{transition:background .3s,box-shadow .3s}
+    #navbar.scrolled{background:rgba(10,10,10,.97)!important;box-shadow:0 1px 0 rgba(220,38,38,.2)}
+
+    .nav-link{color:#9CA3AF;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+    .nav-link:hover,.nav-link.active{color:#F5F5F5;border-bottom-color:#DC2626}
+
+    .btn-red{display:inline-flex;align-items:center;gap:8px;background:#DC2626;color:#fff;padding:13px 26px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(220,38,38,.4);transition:background .2s,transform .18s}
+    .btn-red:hover{background:#EF4444;transform:translateY(-2px)}
+
+    .sep{height:1px;background:linear-gradient(90deg,transparent,rgba(220,38,38,.5) 30%,rgba(220,38,38,.8) 50%,rgba(220,38,38,.5) 70%,transparent)}
+    .section-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#DC2626}
+
+    .prose h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;color:#F5F5F5;margin:40px 0 14px;line-height:1.05}
+    .prose h3{font-family:'Barlow Condensed',sans-serif;font-size:clamp(17px,2vw,22px);font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:#F5F5F5;margin:28px 0 10px}
+    .prose p{color:#D1D5DB;font-size:16px;line-height:1.75;margin:0 0 18px}
+    .prose ul,.prose ol{margin:0 0 18px;padding-left:22px}
+    .prose li{color:#D1D5DB;font-size:16px;line-height:1.7;margin-bottom:8px}
+    .prose ul li::marker{color:#DC2626}
+    .prose ol li::marker{color:#DC2626;font-weight:700}
+    .prose strong{color:#F5F5F5;font-weight:600}
+    .prose a{color:#DC2626;text-decoration:none;border-bottom:1px solid rgba(220,38,38,.3);transition:border-color .2s}
+    .prose a:hover{border-bottom-color:#DC2626}
+    .prose blockquote{border-left:3px solid #DC2626;padding:14px 20px;margin:24px 0;background:#111111}
+    .prose blockquote p{color:#9CA3AF;font-style:italic;margin:0}
+    .prose table{width:100%;border-collapse:collapse;margin:24px 0}
+    .prose th{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6B7280;padding:12px 16px;text-align:left;border-bottom:2px solid rgba(255,255,255,.08)}
+    .prose td{font-size:14px;color:#D1D5DB;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.05)}
+    .prose tr:last-child td{border-bottom:none}
+    .prose tr:hover td{background:rgba(220,38,38,.04)}
+    .prose hr{border:none;border-top:1px solid rgba(255,255,255,.08);margin:32px 0}
+
+    .cat{display:inline-block;padding:3px 10px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .cat-siguranta{background:#DC2626;color:#fff}
+    .cat-intretinere{background:rgba(220,38,38,.12);border:1px solid rgba(220,38,38,.4);color:#EF4444}
+    .cat-anvelope{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#F5F5F5}
+
+    .rel-card{background:#111111;border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;text-decoration:none;overflow:hidden;transition:border-color .3s,transform .25s}
+    .rel-card:hover{border-color:rgba(220,38,38,.4);transform:translateY(-3px)}
+
+    #mobile-menu{display:none}
+    #mobile-menu.open{display:flex}
+    @media(max-width:768px){.desktop-nav{display:none!important}.post-layout{grid-template-columns:1fr!important}.sidebar{display:none!important}}
+    @media(min-width:769px){#hamburger{display:none!important}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar" style="position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,48px);background:rgba(10,10,10,.9);backdrop-filter:blur(12px);">
+  <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="#DC2626" stroke-width="4"/><circle cx="16" cy="16" r="5" fill="#DC2626"/><circle cx="16" cy="16" r="2.2" fill="#0A0A0A"/></svg>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;letter-spacing:-0.01em;color:#F5F5F5;">VULCA<span style="color:#DC2626;">PRO</span></span>
+  </a>
+  <div class="desktop-nav" style="display:flex;align-items:center;gap:32px;">
+    <a href="index.html" class="nav-link">Acasă</a>
+    <a href="servicii.html" class="nav-link">Servicii</a>
+    <a href="tarife.html" class="nav-link">Tarife</a>
+    <a href="blog.html" class="nav-link active">Blog</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <a href="tel:0784707404" class="btn-red desktop-nav" style="padding:10px 20px;font-size:13px;">0784 707 404</a>
+    <button id="hamburger" style="background:none;border:none;cursor:pointer;padding:4px;color:#F5F5F5;" aria-label="Meniu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div id="mobile-menu" style="position:fixed;inset:0;z-index:99;background:rgba(10,10,10,.98);backdrop-filter:blur(16px);flex-direction:column;align-items:center;justify-content:center;gap:28px;">
+  <button id="menu-close" style="position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;color:#F5F5F5;" aria-label="Închide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <a href="index.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;text-transform:uppercase;">Acasă</a>
+  <a href="servicii.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;text-transform:uppercase;">Servicii</a>
+  <a href="tarife.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;text-transform:uppercase;">Tarife</a>
+  <a href="blog.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#DC2626;text-decoration:none;text-transform:uppercase;">Blog</a>
+  <a href="tel:0784707404" class="btn-red" style="margin-top:8px;font-size:16px;padding:14px 32px;">0784 707 404</a>
+</div>
+
+<!-- ARTICLE HERO -->
+<section style="background:#0A0A0A;padding-top:64px;position:relative;overflow:hidden;">
+  <div style="position:relative;width:100%;overflow:hidden;max-height:480px;">
+    <img id="hero-img" src="" alt="" style="width:100%;height:480px;object-fit:cover;opacity:0.5;filter:grayscale(15%);" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.2),rgba(10,10,10,0.92) 85%,#0A0A0A 100%);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(220,38,38,0.1),transparent 55%);"></div>
+  </div>
+
+  <div style="max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,48px);">
+    <div style="transform:translateY(-80px);margin-bottom:-50px;">
+      <nav aria-label="Breadcrumb" style="margin-bottom:16px;">
+        <ol style="display:flex;align-items:center;gap:8px;list-style:none;padding:0;margin:0;flex-wrap:wrap;">
+          <li><a href="index.html" style="font-size:12px;color:#6B7280;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Acasă</a></li>
+          <li style="color:#4B5563;font-size:12px;">/</li>
+          <li><a href="blog.html" style="font-size:12px;color:#6B7280;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Blog</a></li>
+          <li style="color:#4B5563;font-size:12px;">/</li>
+          <li style="font-size:12px;color:#9CA3AF;" id="breadcrumb-title">Articol</li>
+        </ol>
+      </nav>
+
+      <span id="article-cat" class="cat" style="margin-bottom:14px;display:inline-block;"></span>
+      <h1 id="article-title" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(30px,5vw,58px);font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;color:#F5F5F5;margin:10px 0 14px;line-height:1.0;"></h1>
+      <p id="article-excerpt" style="color:#6B7280;font-size:15px;line-height:1.7;margin:0 0 18px;"></p>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <span style="display:flex;align-items:center;gap:6px;">
+          <div style="width:26px;height:26px;background:#DC2626;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <span style="font-size:13px;font-weight:600;color:#9CA3AF;">Echipa VulcaPro</span>
+        </span>
+        <span style="font-size:13px;color:#6B7280;" id="article-date"></span>
+        <span style="font-size:13px;color:#6B7280;" id="article-readtime"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px) clamp(64px,10vw,100px);">
+  <div class="post-layout" style="display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start;">
+
+    <article>
+      <div class="prose" id="article-body"></div>
+
+      <div class="sep" style="margin:40px 0;"></div>
+
+      <div style="background:#111111;border:1px solid rgba(220,38,38,.2);padding:28px;">
+        <p class="section-label" style="margin-bottom:10px;">VulcaPro București</p>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;text-transform:uppercase;color:#F5F5F5;margin:0 0 10px;">Ai nevoie de ajutor?</h3>
+        <p style="color:#6B7280;font-size:14px;line-height:1.65;margin:0 0 18px;">Sunăm gratuit și îți explicăm orice. Str. Dorobanți 33, București.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <a href="tel:0784707404" class="btn-red">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            Sună Acum
+          </a>
+          <a href="tarife.html" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#F5F5F5;padding:12px 22px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border:1px solid rgba(245,245,245,.2);text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor='#DC2626'" onmouseout="this.style.borderColor='rgba(245,245,245,0.2)'">Calculator Tarife</a>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;">
+        <a href="blog.html" style="display:inline-flex;align-items:center;gap:8px;color:#6B7280;font-size:12px;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;font-family:'Barlow Condensed',sans-serif;transition:color .2s;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Înapoi la Blog
+        </a>
+      </div>
+    </article>
+
+    <aside class="sidebar" style="position:sticky;top:88px;display:flex;flex-direction:column;gap:16px;">
+      <div style="background:#111111;border:1px solid rgba(255,255,255,.06);padding:18px;">
+        <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#6B7280;margin:0 0 10px;">Cuprins</p>
+        <nav id="toc" style="display:flex;flex-direction:column;gap:2px;" aria-label="Cuprins articol"></nav>
+      </div>
+
+      <div style="background:#DC2626;padding:20px;">
+        <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin:0 0 6px;">VulcaPro</p>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:900;text-transform:uppercase;color:#fff;margin:0 0 3px;">Str. Dorobanți 33</p>
+        <p style="font-size:12px;color:rgba(255,255,255,.7);margin:0 0 14px;">L–V 08–18 · S–D 09–13</p>
+        <a href="tel:0784707404" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#DC2626;padding:10px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+          0784 707 404
+        </a>
+      </div>
+
+      <div>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#6B7280;margin:0 0 10px;">Articole Similare</p>
+        <div id="related-posts" style="display:flex;flex-direction:column;gap:6px;"></div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:#0A0A0A;border-top:1px solid rgba(220,38,38,.15);padding:clamp(32px,4vw,48px) clamp(16px,4vw,48px);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="#DC2626" stroke-width="4"/><circle cx="16" cy="16" r="5" fill="#DC2626"/><circle cx="16" cy="16" r="2.2" fill="#0A0A0A"/></svg>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:#F5F5F5;">VULCA<span style="color:#DC2626;">PRO</span></span>
+    </a>
+    <p style="color:#4B5563;font-size:12px;margin:0;">© 2025 VulcaPro</p>
+    <div style="display:flex;gap:20px;">
+      <a href="index.html" style="color:#6B7280;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Acasă</a>
+      <a href="servicii.html" style="color:#6B7280;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Servicii</a>
+      <a href="tarife.html" style="color:#6B7280;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Tarife</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const ARTICLES={
+  'cand-schimbi-anvelopele':{title:'Când este momentul să schimbi anvelopele sezonier?',category:'intretinere',categoryLabel:'Întreținere',date:'15 Ian 2025',readTime:'5 min citire',excerpt:'Temperatura sub 7°C nu este singurul semnal. Ghid complet pentru a lua decizia corectă.',image:'Assets/blog/blog-iarna.jpg',body:`<h2>De ce contează momentul schimbului</h2><p>Cei mai mulți șoferi schimbă anvelopele când văd zăpadă. Momentul optim este determinat de <strong>temperatura ambiantă</strong>, nu de aspectul vizual al drumului.</p><h2>Regula celor 7°C</h2><p>Cauciucul de vară devine rigid sub 7°C. Aderența scade cu până la 50% față de o anvelopă de iarnă la aceeași temperatură. Nu trebuie să fie zăpadă — o șosea uscată la 5°C este periculoasă cu anvelope de vară.</p><blockquote><p>În București, temperatura medie coboară sub 7°C din prima jumătate a lunii noiembrie. Schimbul optim: <strong>octombrie – prima săptămână noiembrie</strong>.</p></blockquote><h2>Semne că e momentul — indiferent de anotimp</h2><ul><li><strong>Adâncimea profilului sub 4mm</strong> — pentru iarnă, sub 4mm eficiența scade drastic.</li><li><strong>Vârsta anvelopei peste 5–6 ani</strong> — cauciucul se degradează chimic. Crăpăturile laterale sunt semnal clar.</li><li><strong>Deformare sau umflătură pe flanc</strong> — înlocuire imediată.</li><li><strong>Distanță de oprire crescută</strong> — anvelopele sunt primul suspect.</li></ul><h2>Calendarul optim pentru București</h2><table><thead><tr><th>Sezon</th><th>Perioadă recomandată</th><th>Criteriu</th></tr></thead><tbody><tr><td>Trecere la iarnă</td><td>1–15 Noiembrie</td><td>Temp. medie sub 10°C</td></tr><tr><td>Trecere la vară</td><td>1–15 Aprilie</td><td>Temp. medie peste 10°C</td></tr></tbody></table><h2>Ce verificăm la fiecare schimb sezonier</h2><p>La VulcaPro, fiecare schimb sezonier include inspecția gratuită a anvelopelor stocate — adâncimea profilului, starea flancurilor și presiunea corectă înainte de montaj.</p><hr/><p><strong>Concluzie:</strong> Nu aștepta prima ninsoare. Schimbul în avans îți garantează un loc rapid și anvelopa potrivită la temperatura potrivită.</p>`},
+  'geometrie-roti-de-ce-conteaza':{title:'Geometria roților: de ce îți afectează siguranța și portofelul',category:'siguranta',categoryLabel:'Siguranță',date:'20 Feb 2025',readTime:'6 min citire',excerpt:'O geometrie dereglată poate costa mii de lei în anvelope uzate prematur și crește riscul de accident.',image:'Assets/blog/blog-frane.jpg',body:`<h2>Ce este geometria roților</h2><p>Geometria roților descrie pozițiile și unghiurile în care roțile mașinii sunt montate față de sol și față de caroserie. Există trei unghiuri principale: <strong>toe</strong> (convergența), <strong>camber</strong> (înclinarea laterală) și <strong>caster</strong> (unghiul axei de direcție).</p><h2>Cum se dereglează geometria</h2><ul><li>Impact cu o groapă sau bordură (cel mai frecvent în București)</li><li>Accident minor, chiar fără daune vizibile la caroserie</li><li>Uzura normală a elementelor de suspensie în timp</li><li>Schimbarea arcurilor sau amortizorilor fără reglaj ulterior</li></ul><h2>Cum recunoști o geometrie dereglată</h2><ul><li><strong>Mașina trage într-o parte</strong> când ții volanul drept pe drum plat</li><li><strong>Uzură neuniformă a anvelopelor</strong> — o parte a anvelopei se uzează mai repede</li><li><strong>Volanul nu e centrat</strong> când mergi drept</li><li><strong>Consum crescut</strong> fără o altă explicație</li></ul><h2>Costul ignorării problemei</h2><p>Un unghi toe incorect de doar <strong>0.5°</strong> poate uza o anvelopă cu <strong>30–40% mai repede</strong>. O geometrie completă costă 280 lei — se amortizează dintr-o singură pereche de anvelope salvate.</p><blockquote><p>Geometria este cea mai ieftină investiție pe care o poți face pentru durata de viață a anvelopelor.</p></blockquote><h2>Cât de des trebuie verificată</h2><ul><li>La fiecare schimb de anvelope (recomandat)</li><li>Imediat după orice impact cu groapă sau bordură</li><li>La 20.000–25.000 km în condiții normale</li><li>La înlocuirea oricărei piese de suspensie sau direcție</li></ul>`},
+  'echilibrare-semne':{title:'5 semne că roțile au nevoie de echilibrare urgentă',category:'intretinere',categoryLabel:'Întreținere',date:'03 Feb 2025',readTime:'4 min citire',excerpt:'Vibrații în volan, uzură neuniformă, consum crescut. Când nu mai poți amâna echilibrarea roților.',image:'Assets/blog/blog-featured.jpg',body:`<h2>Ce este dezechilibrul roților</h2><p>O roată nu este niciodată perfect uniformă ca masă. Echilibrarea adaugă greutăți mici în punctele opuse pentru a compensa — rezultatul este o rotație perfect uniformă la orice viteză.</p><h2>Semnul 1: Vibrații în volan la viteze specifice</h2><p>Cel mai clar semn: vibrații în volan care apar în jurul <strong>80–110 km/h</strong> și se liniștesc la alte viteze. Dezechilibrul generează frecvențe de rezonanță diferite în funcție de viteza de rotație.</p><h2>Semnul 2: Uzură neuniformă în „pete"</h2><p>O roată dezechilibrată „sare" ușor pe carosabil. Rezultatul: anvelope cu zone uzate mai mult — vizibile ca pete plat-rotunde la distanțe regulate pe circumferință.</p><h2>Semnul 3: Consum de combustibil crescut</h2><p>Vibrațiile constante înseamnă energie pierdută. Diferența poate fi de <strong>2–5%</strong> din consumul total — invizibilă per plin, dar semnificativă pe termen lung.</p><h2>Semnul 4: Uzura accelerată a amortizorilor</h2><p>Vibrațiile transmise prin roată lucrează continuu la articulațiile de suspensie. Un amortizor proiectat să dureze 80.000 km poate ceda mult mai repede dacă roțile sunt dezechilibrate cronic.</p><h2>Semnul 5: Vibrații la viteză redusă</h2><p>Dacă vibrațiile apar și sub 60 km/h, problema este mai gravă — poate fi un dezechilibru pronunțat sau o anvelopă deformată structural.</p><h2>Cât de des echilibrezi roțile</h2><ul><li><strong>La fiecare schimb de anvelope</strong> — obligatoriu</li><li><strong>La 10.000–15.000 km</strong> în condiții normale</li><li><strong>Imediat</strong> dacă apare oricare dintre semnele de mai sus</li></ul>`},
+  'anvelope-vara-vs-iarna':{title:'Anvelope de vară vs. iarnă vs. all-season: care sunt potrivite?',category:'anvelope',categoryLabel:'Anvelope',date:'28 Feb 2025',readTime:'7 min citire',excerpt:'Pros și cons pentru fiecare tip. Ce funcționează în traficul urban din București.',image:'https://placehold.co/1200x500/111111/DC2626?text=Anvelope',body:`<h2>Diferența fundamentală: compoziția cauciucului</h2><p>Toate cele trei tipuri diferă în primul rând prin <strong>compoziția chimică a benzii de rulare</strong>. Cauciucul de vară devine rigid sub 7°C. Cauciucul de iarnă rămâne flexibil până la -20°C. All-season-ul face un compromis între cele două.</p><h2>Anvelope de vară</h2><ul><li>Aderență maximă pe asfalt uscat și umed peste 7°C</li><li>Durată de viață mai mare — compoziție mai dură</li><li>Consum de combustibil mai mic</li><li>Comportament dinamic mai precis</li></ul><h2>Anvelope de iarnă</h2><ul><li>Aderență superioară pe zăpadă, gheață, umed la rece</li><li>Frânare cu 30–40% mai scurtă sub 7°C față de vară</li><li>Comportament predictibil în condiții severe</li></ul><h2>Anvelope all-season</h2><p>Conceptul de „o singură anvelopă pentru tot anul" sună bine în teorie. În practică, face un compromis care lasă nesatisfăcuți șoferii din ambele extreme.</p><blockquote><p>All-season-ul este cea mai bună alegere dacă parcurgi sub 8.000 km/an și nu vrei bătaia de cap a schimbului sezonier.</p></blockquote><h2>Recomandarea noastră pentru București</h2><p>Recomandăm sezonier dacă rulezi peste 15.000 km/an, conduci frecvent pe autostrăzi sau mașina ta are mai mult de 150 CP.</p>`},
+  'presiune-anvelope':{title:'Presiunea corectă în anvelope: de ce este critică',category:'siguranta',categoryLabel:'Siguranță',date:'10 Mar 2025',readTime:'4 min citire',excerpt:'O diferență de 0.3 bar poate crește consumul cu 3% și reduce durata anvelopei cu 15%.',image:'https://placehold.co/1200x500/111111/DC2626?text=Presiune+Anvelope',body:`<h2>De ce fluctuează presiunea</h2><p>Presiunea anvelopei scade natural — aproximativ <strong>0.07–0.14 bar pe lună</strong> chiar și fără nicio pană. La fiecare 10°C de scădere a temperaturii, presiunea scade cu aproximativ <strong>0.1 bar</strong>.</p><h2>Efectele subpresiunii</h2><ul><li><strong>Uzură accelerată pe flancuri</strong></li><li><strong>Consum crescut cu 1–3%</strong> per 0.3 bar subpresiune</li><li><strong>Distanță de frânare mărită</strong></li><li><strong>Risc de explozie</strong> la viteză mare</li></ul><h2>Efectele suprapresiunii</h2><ul><li><strong>Uzură excesivă în centru</strong></li><li><strong>Duritate excesivă</strong> — mai puțin confort</li><li><strong>Risc de spargere</strong> la impact cu groapă</li></ul><h2>Care este presiunea corectă</h2><p>Presiunea recomandată este specificată de <strong>producătorul mașinii</strong>, nu al anvelopei. O găsești pe eticheta din cadrul ușii șoferului. Valorile tipice: <strong>2.0–2.8 bar</strong> pentru autoturisme.</p><h2>Când verifici presiunea</h2><ul><li>Lunar, întotdeauna la rece (după min. 3h de la oprire)</li><li>Înainte de orice călătorie lungă</li><li>La schimbarea sezonului</li></ul><h2>Azot vs. aer</h2><p>Azotul are molecule mai mari decât oxigenul — scapă mai greu prin cauciuc. Presiunea se menține mai stabilă pe termen lung și nu fluctuează la fel de mult cu temperatura. La VulcaPro: 10 lei/roată sau 35 lei setul complet.</p>`},
+  'run-flat-merita':{title:'Anvelope Run Flat: ce sunt, avantaje și cât costă',category:'anvelope',categoryLabel:'Anvelope',date:'18 Mar 2025',readTime:'6 min citire',excerpt:'Poți continua să conduci cu o pană. Dar merită prețul mai mare și limitările?',image:'https://placehold.co/1200x500/111111/DC2626?text=Run+Flat',body:`<h2>Ce este o anvelopă Run Flat</h2><p>O anvelopă Run Flat are pereții laterali întăriți special. Când se dezumflă, flanctul rigid preia greutatea mașinii și îți permite să continui să conduci fără să te oprești imediat.</p><h2>Câți km poți face cu o pană</h2><p>Distanța maximă: <strong>80 km la maximum 80 km/h</strong>. Sistemul TPMS este obligatoriu — altfel nu știi că ai o pană.</p><h2>Avantaje</h2><ul><li>Nu ești nevoit să te oprești imediat pe autostradă</li><li>Eliminarea roții de rezervă — mai mult spațiu în portbagaj</li><li>Comportament stabil imediat după pană</li></ul><h2>Dezavantaje</h2><ul><li><strong>Preț de 30–50% mai mare</strong> față de anvelope standard</li><li><strong>Confort mai redus</strong> — pereții rigizi transmit mai mult din denivelări</li><li><strong>Nu se pot repara</strong> după o pană — trebuie înlocuite</li><li><strong>Disponibilitate mai mică</strong> în dimensiuni rare</li></ul><blockquote><p>Run Flat merită dacă conduci des pe autostradă, singur. Nu merită dacă conduci exclusiv urban cu posibilitate de asistență rapidă.</p></blockquote>`},
+  'uzura-anvelope-semne':{title:'Cum citești uzura anvelopei: ghid vizual complet',category:'intretinere',categoryLabel:'Întreținere',date:'05 Mar 2025',readTime:'5 min citire',excerpt:'Uzura centrală, laterală sau neuniformă — ce îți spune fiecare tipar despre starea mașinii.',image:'https://placehold.co/1200x500/111111/DC2626?text=Uzura+Anvelopei',body:`<h2>Limita legală de uzură</h2><p>Limita legală în România este de <strong>1.6mm adâncime a profilului</strong>. Indicatoarele TWI sunt marcaje mici în șanțurile principale — când profilul ajunge la nivelul lor, anvelopa trebuie înlocuită. Pentru iarnă: de la 4mm.</p><h2>Uzura uniformă pe toată lățimea</h2><p><strong>Aceasta este uzura normală</strong> — semnul că presiunea, geometria și echilibrarea sunt corecte.</p><h2>Uzura excesivă în centru</h2><p><strong>Cauza: suprapresiune.</strong> Anvelopa bombată atinge solul pe o suprafață mai mică, în centru. Soluție: verifică și reduce presiunea la valoarea recomandată.</p><h2>Uzura excesivă pe ambele flancuri</h2><p><strong>Cauza: subpresiune.</strong> Anvelopa prea moale se turtește, transferând contactul spre margini. Verifică presiunea și umflă corect.</p><h2>Uzura pe un singur flanc</h2><p><strong>Cauza: geometrie dereglată</strong> — unghiul de camber incorect. Această uzură este ireversibilă. Geometria trebuie corectată imediat pentru a nu repeta problema pe anvelopa nouă.</p><h2>Uzura în „pete"</h2><p><strong>Cauzele posibile:</strong> roți dezechilibrate, amortizoare uzate sau frânare agresivă (flat spot). Verifică echilibrarea și starea amortizorilor.</p><h2>Cum verifici adâncimea profilului acasă</h2><p>Introdu o monedă de 50 bani în șanțul profilului. Dacă vârful ghindei rămâne vizibil, profilul este sub 4mm.</p>`}
+};
+
+const RELATED={'cand-schimbi-anvelopele':['echilibrare-semne','anvelope-vara-vs-iarna'],'geometrie-roti-de-ce-conteaza':['echilibrare-semne','uzura-anvelope-semne'],'echilibrare-semne':['geometrie-roti-de-ce-conteaza','uzura-anvelope-semne'],'anvelope-vara-vs-iarna':['cand-schimbi-anvelopele','presiune-anvelope'],'presiune-anvelope':['anvelope-vara-vs-iarna','run-flat-merita'],'run-flat-merita':['anvelope-vara-vs-iarna','presiune-anvelope'],'uzura-anvelope-semne':['geometrie-roti-de-ce-conteaza','echilibrare-semne']};
+
+const slug=new URLSearchParams(location.search).get('slug')||'cand-schimbi-anvelopele';
+const article=ARTICLES[slug];
+if(article){
+  document.title=article.title+' — VulcaPro';
+  document.getElementById('hero-img').src=article.image;
+  document.getElementById('hero-img').alt=article.title;
+  document.getElementById('article-title').textContent=article.title;
+  document.getElementById('article-excerpt').textContent=article.excerpt;
+  document.getElementById('article-date').textContent=article.date;
+  document.getElementById('article-readtime').textContent=article.readTime;
+  document.getElementById('breadcrumb-title').textContent=article.title.substring(0,45)+'…';
+  const catEl=document.getElementById('article-cat');
+  catEl.textContent=article.categoryLabel;
+  catEl.className='cat cat-'+article.category;
+  document.getElementById('article-body').innerHTML=article.body;
+  const toc=document.getElementById('toc');
+  document.querySelectorAll('#article-body h2').forEach((h,i)=>{
+    h.id='s'+i;
+    const a=document.createElement('a');
+    a.href='#s'+i;a.textContent=h.textContent;
+    a.style.cssText='display:block;padding:5px 0 5px 10px;font-size:12px;font-weight:600;color:#6B7280;text-decoration:none;border-left:2px solid transparent;transition:color .2s,border-color .2s;';
+    a.onmouseover=()=>{a.style.color='#F5F5F5';a.style.borderColor='#DC2626'};
+    a.onmouseout=()=>{a.style.color='#6B7280';a.style.borderColor='transparent'};
+    toc.appendChild(a);
+  });
+  const relSlugs=RELATED[slug]||[];
+  const relContainer=document.getElementById('related-posts');
+  relSlugs.forEach(rs=>{
+    const rel=ARTICLES[rs];if(!rel)return;
+    const a=document.createElement('a');a.href='blog-post.html?slug='+rs;a.className='rel-card';
+    a.innerHTML='<div style="padding:12px 14px;display:flex;flex-direction:column;gap:5px;"><span class="cat cat-'+rel.category+'" style="font-size:9px;">'+rel.categoryLabel+'</span><p style="font-family:\'Barlow Condensed\',sans-serif;font-size:13px;font-weight:800;text-transform:uppercase;color:#F5F5F5;margin:0;line-height:1.2;">'+rel.title+'</p><span style="font-size:11px;color:#6B7280;">'+rel.readTime+'</span></div>';
+    relContainer.appendChild(a);
+  });
+}
+
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>40),{passive:true});
+const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobile-menu'),menuClose=document.getElementById('menu-close');
+function openMenu(){mobileMenu.classList.add('open');document.body.style.overflow='hidden';hamburger.setAttribute('aria-expanded','true')}
+function closeMenu(){mobileMenu.classList.remove('open');document.body.style.overflow='';hamburger.setAttribute('aria-expanded','false')}
+hamburger.addEventListener('click',openMenu);menuClose.addEventListener('click',closeMenu);
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+</script>
+</body>
+</html>

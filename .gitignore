@@ -1,0 +1,9 @@
+.claude/
+CLAUDE.md
+SKILL.md
+screenshot.mjs
+serve.mjs
+temporary screenshots/
+node_modules/
+
+.vercel

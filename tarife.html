@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calculator tarife VulcaPro — Află prețul exact pentru schimb anvelope, echilibrare, geometrie 3D și îndreptare jante în București." />
+  <title>Tarife & Calculator — VulcaPro Vulcanizare București</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230A0A0A'/%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23DC2626' stroke-width='4'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23DC2626'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%230A0A0A'/%3E%3C/svg%3E" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Barlow',sans-serif;background:#0A0A0A;color:#F5F5F5;overflow-x:hidden}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+    .reveal.revealed{opacity:1;transform:translateY(0)}
+    .reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
+
+    #navbar{transition:background .3s,box-shadow .3s}
+    #navbar.scrolled{background:rgba(10,10,10,.97)!important;box-shadow:0 1px 0 rgba(220,38,38,.2)}
+
+    .nav-link{color:#9CA3AF;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+    .nav-link:hover,.nav-link.active{color:#F5F5F5;border-bottom-color:#DC2626}
+
+    .btn-red{display:inline-flex;align-items:center;gap:8px;background:#DC2626;color:#fff;padding:13px 26px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(220,38,38,.4);transition:background .2s,transform .18s,box-shadow .2s}
+    .btn-red:hover{background:#EF4444;transform:translateY(-2px);box-shadow:0 8px 28px rgba(220,38,38,.55)}
+    .btn-red:focus-visible{outline:2px solid #EF4444;outline-offset:3px}
+
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#F5F5F5;padding:12px 25px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.08em;border:1px solid rgba(245,245,245,.3);text-decoration:none;transition:border-color .2s,background .2s,transform .18s}
+    .btn-ghost:hover{border-color:#DC2626;background:rgba(220,38,38,.08);transform:translateY(-1px)}
+
+    .sep{height:1px;background:linear-gradient(90deg,transparent,rgba(220,38,38,.5) 30%,rgba(220,38,38,.8) 50%,rgba(220,38,38,.5) 70%,transparent)}
+    .section-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#DC2626}
+
+    /* ── Calculator UI ── */
+    .svc-row { margin-bottom:8px; }
+    .svc-option {
+      display:flex; align-items:flex-start; gap:14px;
+      padding:20px; cursor:pointer; background:#111111;
+      border:2px solid transparent; transition:border-color .2s, background .2s;
+      position:relative; user-select:none;
+    }
+    .svc-option:hover { border-color:rgba(220,38,38,.35); background:#1A1A1A; }
+    .svc-option.checked { border-color:#DC2626; background:rgba(220,38,38,.06); }
+    .svc-option.checked.has-sizes { border-bottom-color:rgba(220,38,38,.3); }
+    .svc-option input[type=checkbox] { position:absolute; opacity:0; width:0; height:0; }
+    .svc-check {
+      width:20px; height:20px; border:2px solid #4B5563; flex-shrink:0; margin-top:2px;
+      display:flex; align-items:center; justify-content:center;
+      transition:border-color .2s, background .2s;
+    }
+    .svc-check svg { opacity:0; transition:opacity .15s; }
+    .svc-option:hover .svc-check { border-color:rgba(220,38,38,.6); }
+    .svc-option.checked .svc-check { border-color:#DC2626; background:#DC2626; }
+    .svc-option.checked .svc-check svg { opacity:1; }
+    .svc-option:focus-within { outline:2px solid #DC2626; outline-offset:2px; }
+
+    /* Inline size panel */
+    .svc-size-panel {
+      display:none; padding:14px 20px 18px 54px;
+      border:2px solid #DC2626; border-top:none;
+      background:rgba(220,38,38,.04);
+    }
+    .svc-size-panel.open { display:block; }
+    .size-btn-inline {
+      padding:9px 6px; font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700;
+      background:#1A1A1A; border:1px solid rgba(255,255,255,.1); color:#9CA3AF;
+      cursor:pointer; transition:border-color .2s, color .2s, background .2s; text-align:center;
+    }
+    .size-btn-inline:hover { border-color:rgba(220,38,38,.5); color:#F5F5F5; }
+    .size-btn-inline.active { border-color:#DC2626; color:#F5F5F5; background:rgba(220,38,38,.12); }
+
+    /* Cart total animation */
+    @keyframes total-pop { 0%{transform:scale(0.9);opacity:0} 60%{transform:scale(1.04)} 100%{transform:scale(1);opacity:1} }
+    .total-pop { animation:total-pop .3s cubic-bezier(.16,1,.3,1) forwards; }
+
+    /* ── Full price table ── */
+    .full-table { width:100%; border-collapse:collapse; }
+    .full-table th { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:#6B7280; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(255,255,255,.08); }
+    .full-table td { font-size:14px; color:#F5F5F5; padding:12px 16px; border-bottom:1px solid rgba(255,255,255,.04); }
+    .full-table tr:last-child td { border-bottom:none; }
+    .full-table tr:hover td { background:rgba(220,38,38,.04); }
+    .full-table .price-col { font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:700; color:#DC2626; text-align:right; }
+
+    #mobile-menu{display:none}
+    #mobile-menu.open{display:flex}
+    @media(max-width:768px){.desktop-nav{display:none!important}}
+    @media(min-width:769px){#hamburger{display:none!important}}
+    @media(max-width:900px){.calc-layout{grid-template-columns:1fr!important}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar" style="position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,48px);background:rgba(10,10,10,.9);backdrop-filter:blur(12px);">
+  <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="#DC2626" stroke-width="4"/><circle cx="16" cy="16" r="5" fill="#DC2626"/><circle cx="16" cy="16" r="2.2" fill="#0A0A0A"/></svg>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;letter-spacing:-0.01em;color:#F5F5F5;">VULCA<span style="color:#DC2626;">PRO</span></span>
+  </a>
+  <div class="desktop-nav" style="display:flex;align-items:center;gap:32px;">
+    <a href="index.html" class="nav-link">Acasă</a>
+    <a href="servicii.html" class="nav-link">Servicii</a>
+    <a href="tarife.html" class="nav-link active">Tarife</a>
+    <a href="blog.html" class="nav-link">Blog</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <a href="tel:0784707404" class="btn-red desktop-nav" style="padding:10px 20px;font-size:13px;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      0784 707 404
+    </a>
+    <button id="hamburger" style="background:none;border:none;cursor:pointer;padding:4px;color:#F5F5F5;" aria-label="Meniu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" style="position:fixed;inset:0;z-index:99;background:rgba(10,10,10,.98);backdrop-filter:blur(16px);flex-direction:column;align-items:center;justify-content:center;gap:28px;">
+  <button id="menu-close" style="position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;color:#F5F5F5;" aria-label="Închide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <a href="index.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;text-transform:uppercase;">Acasă</a>
+  <a href="servicii.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;text-transform:uppercase;">Servicii</a>
+  <a href="tarife.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#DC2626;text-decoration:none;text-transform:uppercase;">Tarife</a>
+  <a href="blog.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;text-transform:uppercase;">Blog</a>
+  <a href="tel:0784707404" class="btn-red" style="margin-top:8px;font-size:16px;padding:14px 32px;">0784 707 404</a>
+</div>
+
+<!-- PAGE HERO -->
+<section style="background:#0A0A0A;padding:clamp(100px,14vw,160px) clamp(16px,4vw,48px) clamp(48px,6vw,64px);position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-10%;right:-5%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(220,38,38,.12) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Prețuri transparente</p>
+    <h1 class="reveal reveal-d1" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,7vw,88px);font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;color:#F5F5F5;margin:12px 0 20px;line-height:0.92;">
+      Calculator<br/><span style="color:#DC2626;">Tarife</span>
+    </h1>
+    <p class="reveal reveal-d2" style="color:#6B7280;font-size:clamp(14px,2vw,17px);line-height:1.7;max-width:520px;margin:0;">
+      Selectează serviciul și dimensiunea jantei — prețul apare instant. Prețurile sunt finale, TVA inclus, fără taxe suplimentare.
+    </p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section style="background:#0A0A0A;padding:0 clamp(16px,4vw,48px) clamp(64px,10vw,100px);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="calc-layout reveal" style="display:grid;grid-template-columns:1fr 400px;gap:32px;align-items:start;">
+
+      <!-- Left: service list -->
+      <div>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#6B7280;margin:0 0 16px;">
+          <span style="color:#DC2626;">01</span> &nbsp; Alege serviciile dorite
+        </p>
+        <div id="service-list" style="display:flex;flex-direction:column;">
+
+          <!-- Schimb Sezonier -->
+          <div class="svc-row" data-service="schimb-sezonier">
+            <label class="svc-option has-sizes">
+              <input type="checkbox" value="schimb-sezonier"/>
+              <div class="svc-check"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true"><polyline points="1 4 4 7.5 10 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div style="flex:1;">
+                <p style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;color:#F5F5F5;margin:0 0 3px;">Schimb Sezonier</p>
+                <p style="font-size:13px;color:#6B7280;margin:0;">Montaj + demontaj + echilibrare + valve — 4 roți</p>
+              </div>
+              <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:#6B7280;white-space:nowrap;align-self:center;">de la 170 lei</span>
+            </label>
+            <div class="svc-size-panel">
+              <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#6B7280;margin:0 0 10px;">Dimensiunea jantei:</p>
+              <div class="size-grid-inline" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;"></div>
+            </div>
+          </div>
+
+          <!-- Echilibrare -->
+          <div class="svc-row" data-service="echilibrare">
+            <label class="svc-option has-sizes">
+              <input type="checkbox" value="echilibrare"/>
+              <div class="svc-check"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true"><polyline points="1 4 4 7.5 10 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div style="flex:1;">
+                <p style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;color:#F5F5F5;margin:0 0 3px;">Echilibrare Roți</p>
+                <p style="font-size:13px;color:#6B7280;margin:0;">Per roată, computerizat</p>
+              </div>
+              <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:#6B7280;white-space:nowrap;align-self:center;">de la 12 lei/roată</span>
+            </label>
+            <div class="svc-size-panel">
+              <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#6B7280;margin:0 0 10px;">Dimensiunea jantei:</p>
+              <div class="size-grid-inline" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;"></div>
+            </div>
+          </div>
+
+          <!-- Geometrie Față -->
+          <div class="svc-row" data-service="geometrie-fata">
+            <label class="svc-option">
+              <input type="checkbox" value="geometrie-fata"/>
+              <div class="svc-check"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true"><polyline points="1 4 4 7.5 10 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div style="flex:1;">
+                <p style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;color:#F5F5F5;margin:0 0 3px;">Geometrie Față</p>
+                <p style="font-size:13px;color:#6B7280;margin:0;">Aliniere axă față, corecție toe și camber</p>
+              </div>
+              <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:#DC2626;white-space:nowrap;align-self:center;">150 lei</span>
+            </label>
+          </div>
+
+          <!-- Geometrie Completă -->
+          <div class="svc-row" data-service="geometrie-completa">
+            <label class="svc-option">
+              <input type="checkbox" value="geometrie-completa"/>
+              <div class="svc-check"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true"><polyline points="1 4 4 7.5 10 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div style="flex:1;">
+                <p style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;color:#F5F5F5;margin:0 0 3px;">Geometrie Completă</p>
+                <p style="font-size:13px;color:#6B7280;margin:0;">Față + spate, 4 roți simultan</p>
+              </div>
+              <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:#DC2626;white-space:nowrap;align-self:center;">280 lei</span>
+            </label>
+          </div>
+
+          <!-- Verificare Geometrie -->
+          <div class="svc-row" data-service="geometrie-verificare">
+            <label class="svc-option">
+              <input type="checkbox" value="geometrie-verificare"/>
+              <div class="svc-check"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true"><polyline points="1 4 4 7.5 10 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div style="flex:1;">
+                <p style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;color:#F5F5F5;margin:0 0 3px;">Verificare Geometrie</p>
+                <p style="font-size:13px;color:#6B7280;margin:0;">Raport complet, fără corecție</p>
+              </div>
+              <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:#DC2626;white-space:nowrap;align-self:center;">60 lei</span>
+            </label>
+          </div>
+
+          <!-- Îndreptare Jantă -->
+          <div class="svc-row" data-service="indreptare">
+            <label class="svc-option has-sizes">
+              <input type="checkbox" value="indreptare"/>
+              <div class="svc-check"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true"><polyline points="1 4 4 7.5 10 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div style="flex:1;">
+                <p style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;color:#F5F5F5;margin:0 0 3px;">Îndreptare Jantă Aliaj</p>
+                <p style="font-size:13px;color:#6B7280;margin:0;">Per jantă, în funcție de diametru</p>
+              </div>
+              <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:#6B7280;white-space:nowrap;align-self:center;">de la 50 lei</span>
+            </label>
+            <div class="svc-size-panel">
+              <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#6B7280;margin:0 0 10px;">Dimensiunea jantei:</p>
+              <div class="size-grid-inline" style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;"></div>
+            </div>
+          </div>
+
+          <!-- Reparație Petic -->
+          <div class="svc-row" data-service="reparatie">
+            <label class="svc-option">
+              <input type="checkbox" value="reparatie"/>
+              <div class="svc-check"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true"><polyline points="1 4 4 7.5 10 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div style="flex:1;">
+                <p style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;color:#F5F5F5;margin:0 0 3px;">Reparație Petic</p>
+                <p style="font-size:13px;color:#6B7280;margin:0;">Etanșeitate, petic vulcanizat interior</p>
+              </div>
+              <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:#DC2626;white-space:nowrap;align-self:center;">15–18 lei</span>
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right: cart panel -->
+      <div style="position:sticky;top:88px;">
+        <div id="result-panel" style="background:#111111;border:1px solid rgba(255,255,255,.08);overflow:hidden;">
+          <div style="padding:20px 24px;background:#1A1A1A;border-bottom:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;">
+            <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#6B7280;margin:0;">Estimare preț</p>
+            <span id="cart-count" style="display:none;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:#DC2626;background:rgba(220,38,38,.12);border:1px solid rgba(220,38,38,.3);padding:2px 8px;"></span>
+          </div>
+
+          <!-- Empty state -->
+          <div id="cart-empty" style="padding:40px 24px;text-align:center;">
+            <svg width="48" height="48" viewBox="0 0 32 32" fill="none" style="margin:0 auto 12px;opacity:0.2;" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="#DC2626" stroke-width="3"/><circle cx="16" cy="16" r="5" fill="#DC2626"/><circle cx="16" cy="16" r="2" fill="#111111"/></svg>
+            <p style="font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:#4B5563;text-transform:uppercase;letter-spacing:0.05em;margin:0;">Selectează serviciile<br/>pentru a vedea totalul</p>
+          </div>
+
+          <!-- Cart items -->
+          <div id="cart-items" style="display:none;flex-direction:column;padding:8px 24px;"></div>
+
+          <!-- Total -->
+          <div id="cart-total" style="display:none;padding:16px 24px;background:#1A1A1A;border-top:1px solid rgba(255,255,255,.06);">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+              <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B7280;flex-shrink:0;">Total estimat</span>
+              <span id="total-price" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,4vw,48px);font-weight:900;color:#DC2626;line-height:1;">0 lei</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div id="cart-ctas" style="display:none;flex-direction:column;gap:10px;padding:20px 24px;">
+            <a href="tel:0784707404" class="btn-red" style="width:100%;justify-content:center;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+              Programează Acum
+            </a>
+            <a id="wa-cta-calc" href="https://wa.me/40784707404" target="_blank" rel="noopener noreferrer"
+               onmouseover="this.style.background='#1fba59';this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.background='#25D366';this.style.transform='translateY(0)'"
+               style="width:100%;justify-content:center;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:13px 26px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.3);transition:background .2s,transform .18s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Scrie pe WhatsApp
+            </a>
+          </div>
+
+          <!-- Info strip -->
+          <div style="padding:14px 24px;background:rgba(220,38,38,.06);border-top:1px solid rgba(220,38,38,.15);">
+            <p style="font-size:12px;color:#6B7280;margin:0;line-height:1.5;">
+              <strong style="color:#DC2626;">✓</strong> Prețuri finale, TVA inclus &nbsp;|&nbsp;
+              <strong style="color:#DC2626;">✓</strong> Fără taxe suplimentare
+            </p>
+          </div>
+        </div>
+
+        <!-- Program -->
+        <div style="margin-top:16px;background:#111111;border:1px solid rgba(255,255,255,.06);padding:20px 24px;">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#6B7280;margin:0 0 12px;">Program</p>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);">
+            <span style="font-size:13px;color:#9CA3AF;">Luni–Vineri</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:#DC2626;">08:00–18:00</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;">
+            <span style="font-size:13px;color:#9CA3AF;">Sâmbătă–Duminică</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:#DC2626;">09:00–13:00</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- FULL PRICE TABLE -->
+<section style="background:#0A0A0A;padding:clamp(64px,8vw,100px) clamp(16px,4vw,48px);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Lista completă</p>
+    <h2 class="reveal reveal-d1" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;color:#F5F5F5;margin:12px 0 40px;">Toate Tarifele</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;">
+
+      <!-- Schimb sezonier -->
+      <div class="reveal" style="background:#111111;border:1px solid rgba(255,255,255,.06);overflow:hidden;">
+        <div style="padding:16px 20px;background:#1A1A1A;border-bottom:1px solid rgba(255,255,255,.06);">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F5F5F5;margin:0;">Schimb Sezonier — 4 roți</p>
+          <p style="font-size:12px;color:#6B7280;margin:4px 0 0;">Montaj + echilibrare + valve incluse</p>
+        </div>
+        <table class="full-table">
+          <thead><tr><th>Dimensiune</th><th style="text-align:right;">Preț</th></tr></thead>
+          <tbody>
+            <tr><td>13″ – 14″</td><td class="price-col">170 lei</td></tr>
+            <tr><td>15″</td><td class="price-col">185 lei</td></tr>
+            <tr><td>16″</td><td class="price-col">195 lei</td></tr>
+            <tr><td>17″ – 18″</td><td class="price-col">220 lei</td></tr>
+            <tr><td>19″ – 20″</td><td class="price-col">265 lei</td></tr>
+            <tr><td>21″ – 22″</td><td class="price-col">295 lei</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Echilibrare -->
+      <div class="reveal reveal-d1" style="background:#111111;border:1px solid rgba(255,255,255,.06);overflow:hidden;">
+        <div style="padding:16px 20px;background:#1A1A1A;border-bottom:1px solid rgba(255,255,255,.06);">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F5F5F5;margin:0;">Echilibrare — per roată</p>
+          <p style="font-size:12px;color:#6B7280;margin:4px 0 0;">Computerizat, greutăți incluse</p>
+        </div>
+        <table class="full-table">
+          <thead><tr><th>Dimensiune</th><th style="text-align:right;">Preț/roată</th></tr></thead>
+          <tbody>
+            <tr><td>13″ – 14″</td><td class="price-col">12 lei</td></tr>
+            <tr><td>15″</td><td class="price-col">14 lei</td></tr>
+            <tr><td>16″</td><td class="price-col">16 lei</td></tr>
+            <tr><td>17″ – 18″</td><td class="price-col">18 lei</td></tr>
+            <tr><td>19″ – 20″</td><td class="price-col">22 lei</td></tr>
+            <tr><td>21″ – 22″</td><td class="price-col">26 lei</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Geometrie -->
+      <div class="reveal reveal-d2" style="background:#111111;border:1px solid rgba(255,255,255,.06);overflow:hidden;">
+        <div style="padding:16px 20px;background:#1A1A1A;border-bottom:1px solid rgba(255,255,255,.06);">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F5F5F5;margin:0;">Geometrie 3D</p>
+          <p style="font-size:12px;color:#6B7280;margin:4px 0 0;">Toate dimensiunile de jantă</p>
+        </div>
+        <table class="full-table">
+          <tbody>
+            <tr><td>Verificare (fără corecție)</td><td class="price-col">60 lei</td></tr>
+            <tr><td>Geometrie față</td><td class="price-col">150 lei</td></tr>
+            <tr><td>Geometrie spate</td><td class="price-col">150 lei</td></tr>
+            <tr><td>Geometrie completă (4 roți)</td><td class="price-col">280 lei</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Îndreptare jante -->
+      <div class="reveal" style="background:#111111;border:1px solid rgba(255,255,255,.06);overflow:hidden;">
+        <div style="padding:16px 20px;background:#1A1A1A;border-bottom:1px solid rgba(255,255,255,.06);">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F5F5F5;margin:0;">Îndreptare Jantă Aliaj</p>
+          <p style="font-size:12px;color:#6B7280;margin:4px 0 0;">Per jantă</p>
+        </div>
+        <table class="full-table">
+          <thead><tr><th>Dimensiune</th><th style="text-align:right;">Preț</th></tr></thead>
+          <tbody>
+            <tr><td>13″</td><td class="price-col">50 lei</td></tr>
+            <tr><td>14″</td><td class="price-col">55 lei</td></tr>
+            <tr><td>15″</td><td class="price-col">60 lei</td></tr>
+            <tr><td>16″</td><td class="price-col">65 lei</td></tr>
+            <tr><td>17″</td><td class="price-col">70 lei</td></tr>
+            <tr><td>18″</td><td class="price-col">80 lei</td></tr>
+            <tr><td>19″</td><td class="price-col">105 lei</td></tr>
+            <tr><td>20″</td><td class="price-col">125 lei</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Diverse -->
+      <div class="reveal reveal-d1" style="background:#111111;border:1px solid rgba(255,255,255,.06);overflow:hidden;">
+        <div style="padding:16px 20px;background:#1A1A1A;border-bottom:1px solid rgba(255,255,255,.06);">
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F5F5F5;margin:0;">Reparații & Diverse</p>
+        </div>
+        <table class="full-table">
+          <tbody>
+            <tr><td>Reparație petic — autoturism</td><td class="price-col">15 lei</td></tr>
+            <tr><td>Reparație petic — SUV / 4x4</td><td class="price-col">18 lei</td></tr>
+            <tr><td>Valvă tubeless</td><td class="price-col">7 lei</td></tr>
+            <tr><td>Presiune aer (per roată)</td><td class="price-col">3 lei</td></tr>
+            <tr><td>Presiune azot (per roată)</td><td class="price-col">10 lei</td></tr>
+            <tr><td>Presiune azot — set 4 roți</td><td class="price-col">35 lei</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="margin-top:24px;padding:16px 20px;background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.2);">
+      <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.7;">
+        <strong style="color:#DC2626;">Toate prețurile includ TVA.</strong> Prețurile sunt orientative și pot varia în funcție de starea anvelopei sau jantei. Tariful final este confirmat la recepția vehiculului.
+        Sunete-ne pentru orice întrebare: <a href="tel:0784707404" style="color:#DC2626;text-decoration:none;font-weight:600;">0784 707 404</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0A0A0A;border-top:1px solid rgba(220,38,38,.15);padding:clamp(32px,4vw,48px) clamp(16px,4vw,48px);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="#DC2626" stroke-width="4"/><circle cx="16" cy="16" r="5" fill="#DC2626"/><circle cx="16" cy="16" r="2.2" fill="#0A0A0A"/></svg>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:#F5F5F5;">VULCA<span style="color:#DC2626;">PRO</span></span>
+    </a>
+    <p style="color:#4B5563;font-size:12px;margin:0;">© 2025 VulcaPro — Str. Dorobanți 33, București</p>
+    <div style="display:flex;gap:20px;">
+      <a href="index.html" style="color:#6B7280;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Acasă</a>
+      <a href="servicii.html" style="color:#6B7280;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Servicii</a>
+      <a href="blog.html" style="color:#6B7280;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Blog</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Navbar ──
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+// ── Mobile menu ──
+const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobile-menu'),menuClose=document.getElementById('menu-close');
+function openMenu(){mobileMenu.classList.add('open');document.body.style.overflow='hidden';hamburger.setAttribute('aria-expanded','true')}
+function closeMenu(){mobileMenu.classList.remove('open');document.body.style.overflow='';hamburger.setAttribute('aria-expanded','false')}
+hamburger.addEventListener('click',openMenu);menuClose.addEventListener('click',closeMenu);
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+
+// ── Scroll reveal ──
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+reveals.forEach(el=>io.observe(el));
+
+// ── PRICES DATA ──
+const PRICES = {
+  'schimb-sezonier': { needsSize:true, label:'Schimb Sezonier', unit:'4 roți', sizeBuckets:[
+    {label:'13″–14″',price:170},{label:'15″',price:185},{label:'16″',price:195},
+    {label:'17″–18″',price:220},{label:'19″–20″',price:265},{label:'21″–22″',price:295}
+  ]},
+  'echilibrare': { needsSize:true, label:'Echilibrare Roți', unit:'per roată', sizeBuckets:[
+    {label:'13″–14″',price:12},{label:'15″',price:14},{label:'16″',price:16},
+    {label:'17″–18″',price:18},{label:'19″–20″',price:22},{label:'21″–22″',price:26}
+  ]},
+  'geometrie-fata':      { needsSize:false, label:'Geometrie Față',        unit:'axă față',       price:150 },
+  'geometrie-completa':  { needsSize:false, label:'Geometrie Completă',    unit:'față + spate',   price:280 },
+  'geometrie-verificare':{ needsSize:false, label:'Verificare Geometrie',  unit:'fără corecție',  price:60  },
+  'indreptare': { needsSize:true, label:'Îndreptare Jantă', unit:'per jantă', sizeBuckets:[
+    {label:'13″',price:50},{label:'14″',price:55},{label:'15″',price:60},{label:'16″',price:65},
+    {label:'17″',price:70},{label:'18″',price:80},{label:'19″',price:105},{label:'20″',price:125}
+  ]},
+  'reparatie': { needsSize:false, label:'Reparație Petic', unit:'per roată', price:null, displayPrice:'15–18' }
+};
+
+// cart[key] = { label, unit, price (null if size pending), sizeLabel }
+const cart = {};
+
+function renderCart() {
+  const cartEmpty   = document.getElementById('cart-empty');
+  const cartItems   = document.getElementById('cart-items');
+  const cartTotal   = document.getElementById('cart-total');
+  const cartCtas    = document.getElementById('cart-ctas');
+  const cartCount   = document.getElementById('cart-count');
+  const totalPriceEl= document.getElementById('total-price');
+  const keys = Object.keys(cart);
+
+  if (keys.length === 0) {
+    cartEmpty.style.display = 'block';
+    cartItems.style.display = 'none';
+    cartTotal.style.display = 'none';
+    cartCtas.style.display  = 'none';
+    cartCount.style.display = 'none';
+    return;
+  }
+
+  cartEmpty.style.display = 'none';
+  cartItems.style.display = 'flex';
+  cartTotal.style.display = 'block';
+  cartCtas.style.display  = 'flex';
+  cartCount.style.display = 'inline';
+  cartCount.textContent   = keys.length + (keys.length === 1 ? ' serviciu' : ' servicii');
+
+  cartItems.innerHTML = keys.map(key => {
+    const item = cart[key];
+    const priceStr = item.price !== null
+      ? (typeof item.price === 'number' ? item.price + ' lei' : item.price + ' lei')
+      : '<span style="color:#6B7280;font-size:13px;">alege dimensiunea</span>';
+    const sub = item.sizeLabel
+      ? `<span style="font-size:12px;color:#DC2626;margin-left:6px;">${item.sizeLabel}</span>` : '';
+    return `<div style="display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05);">
+      <div><p style="font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;color:#F5F5F5;margin:0;">${item.label}${sub}</p>
+      <p style="font-size:12px;color:#6B7280;margin:1px 0 0;">${item.unit}</p></div>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;color:#DC2626;white-space:nowrap;margin-left:12px;">${priceStr}</span>
+    </div>`;
+  }).join('');
+
+  let total = 0, pending = false;
+  keys.forEach(k => {
+    if (cart[k].price !== null && typeof cart[k].price === 'number') total += cart[k].price;
+    else pending = true;
+  });
+  totalPriceEl.classList.remove('total-pop');
+  void totalPriceEl.offsetWidth;
+  totalPriceEl.classList.add('total-pop');
+  totalPriceEl.textContent = total + ' lei' + (pending ? '+' : '');
+
+  // Dynamic WhatsApp message
+  const svcs = keys.map(k => cart[k].label + (cart[k].sizeLabel ? ` (${cart[k].sizeLabel})` : '')).join(', ');
+  const msg = encodeURIComponent(`Bună, aș dori o programare pentru: ${svcs}. Total estimat: ${total} lei. Vă rog confirmați disponibilitatea.`);
+  document.getElementById('wa-cta-calc').href = `https://wa.me/40784707404?text=${msg}`;
+}
+
+// ── Wire up each service row ──
+document.querySelectorAll('.svc-row').forEach(row => {
+  const key = row.dataset.service;
+  const data = PRICES[key];
+  const lbl = row.querySelector('.svc-option');
+  const cb  = row.querySelector('input[type=checkbox]');
+  const panel = row.querySelector('.svc-size-panel');
+  const sgEl  = panel ? panel.querySelector('.size-grid-inline') : null;
+
+  // Populate inline size buttons
+  if (data.needsSize && sgEl) {
+    sgEl.innerHTML = data.sizeBuckets.map((b,i) =>
+      `<button class="size-btn-inline" data-i="${i}">${b.label}</button>`
+    ).join('');
+    sgEl.querySelectorAll('.size-btn-inline').forEach((btn, i) => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        sgEl.querySelectorAll('.size-btn-inline').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const b = data.sizeBuckets[i];
+        cart[key] = { label:data.label, unit:data.unit, price:b.price, sizeLabel:b.label };
+        renderCart();
+      });
+    });
+  }
+
+  lbl.addEventListener('click', () => {
+    cb.checked = !cb.checked;
+    if (cb.checked) {
+      lbl.classList.add('checked');
+      if (data.needsSize && panel) {
+        panel.classList.add('open');
+        cart[key] = { label:data.label, unit:data.unit, price:null, sizeLabel:null };
+      } else {
+        const p = data.price;
+        cart[key] = { label:data.label, unit:data.unit, price:p, sizeLabel:null };
+      }
+    } else {
+      lbl.classList.remove('checked');
+      if (panel) {
+        panel.classList.remove('open');
+        if (sgEl) sgEl.querySelectorAll('.size-btn-inline').forEach(b => b.classList.remove('active'));
+      }
+      delete cart[key];
+    }
+    renderCart();
+  });
+});
+
+
+</script>
+
+<!-- WhatsApp Floater -->
+<a href="https://wa.me/40784707404?text=Bun%C4%83%2C%20a%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20serviciile%20VulcaPro."
+   target="_blank" rel="noopener noreferrer" aria-label="Contactează-ne pe WhatsApp"
+   onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 32px rgba(37,211,102,0.6),0 2px 8px rgba(0,0,0,0.4)'"
+   onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 24px rgba(37,211,102,0.45),0 2px 8px rgba(0,0,0,0.4)'"
+   style="position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.45),0 2px 8px rgba(0,0,0,0.4);text-decoration:none;transition:transform 0.2s cubic-bezier(0.16,1,0.3,1),box-shadow 0.2s;">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+</body>
+</html>

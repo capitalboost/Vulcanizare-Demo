@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog VulcaPro — Sfaturi despre anvelope, geometrie, echilibrare și întreținere auto. Ghiduri practice pentru șoferii din București." />
+  <title>Blog — VulcaPro Vulcanizare București</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230A0A0A'/%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23DC2626' stroke-width='4'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23DC2626'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%230A0A0A'/%3E%3C/svg%3E" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Barlow',sans-serif;background:#0A0A0A;color:#F5F5F5;overflow-x:hidden}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+    .reveal.revealed{opacity:1;transform:translateY(0)}
+    .reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}.reveal-d4{transition-delay:.32s}.reveal-d5{transition-delay:.40s}
+
+    #navbar{transition:background .3s,box-shadow .3s}
+    #navbar.scrolled{background:rgba(10,10,10,.97)!important;box-shadow:0 1px 0 rgba(220,38,38,.2)}
+
+    .nav-link{color:#9CA3AF;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+    .nav-link:hover,.nav-link.active{color:#F5F5F5;border-bottom-color:#DC2626}
+
+    .btn-red{display:inline-flex;align-items:center;gap:8px;background:#DC2626;color:#fff;padding:13px 26px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(220,38,38,.4);transition:background .2s,transform .18s,box-shadow .2s}
+    .btn-red:hover{background:#EF4444;transform:translateY(-2px)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#F5F5F5;padding:12px 25px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.08em;border:1px solid rgba(245,245,245,.3);text-decoration:none;transition:border-color .2s,background .2s,transform .18s}
+    .btn-ghost:hover{border-color:#DC2626;background:rgba(220,38,38,.08);transform:translateY(-1px)}
+
+    .sep{height:1px;background:linear-gradient(90deg,transparent,rgba(220,38,38,.5) 30%,rgba(220,38,38,.8) 50%,rgba(220,38,38,.5) 70%,transparent)}
+    .section-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#DC2626}
+
+    /* Blog cards */
+    .blog-card{background:#111111;border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;text-decoration:none;transition:border-color .3s,transform .25s,box-shadow .3s;overflow:hidden}
+    .blog-card:hover{border-color:rgba(220,38,38,.4);transform:translateY(-4px);box-shadow:0 12px 40px rgba(220,38,38,.1)}
+    .blog-card:focus-visible{outline:2px solid #DC2626;outline-offset:3px}
+    .blog-img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+    .blog-card:hover .blog-img{transform:scale(1.05)}
+    .blog-img-wrap{position:relative;overflow:hidden}
+    .blog-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.65),transparent 55%)}
+
+    /* Featured card */
+    .featured-card{background:#111111;border:1px solid rgba(220,38,38,.2);display:grid;grid-template-columns:1.2fr 1fr;text-decoration:none;transition:border-color .3s,box-shadow .3s;overflow:hidden}
+    .featured-card:hover{border-color:rgba(220,38,38,.5);box-shadow:0 16px 56px rgba(220,38,38,.12)}
+    .featured-card:focus-visible{outline:2px solid #DC2626;outline-offset:3px}
+    .featured-img{width:100%;height:100%;object-fit:cover;min-height:280px;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+    .featured-card:hover .featured-img{transform:scale(1.04)}
+
+    /* Category badges */
+    .cat{display:inline-block;padding:3px 10px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .cat-siguranta{background:#DC2626;color:#fff}
+    .cat-intretinere{background:rgba(220,38,38,.12);border:1px solid rgba(220,38,38,.4);color:#EF4444}
+    .cat-anvelope{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#F5F5F5}
+
+    /* Filter buttons */
+    .filter-btn{padding:8px 18px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.12);background:transparent;color:#6B7280;cursor:pointer;transition:all .2s}
+    .filter-btn:hover{border-color:rgba(220,38,38,.4);color:#F5F5F5}
+    .filter-btn.active{background:#DC2626;border-color:#DC2626;color:#fff}
+    .filter-btn:focus-visible{outline:2px solid #DC2626;outline-offset:2px}
+
+    #mobile-menu{display:none}
+    #mobile-menu.open{display:flex}
+    @media(max-width:768px){.desktop-nav{display:none!important}.featured-card{grid-template-columns:1fr!important}}
+    @media(min-width:769px){#hamburger{display:none!important}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar" style="position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,48px);background:rgba(10,10,10,.9);backdrop-filter:blur(12px);">
+  <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="#DC2626" stroke-width="4"/><circle cx="16" cy="16" r="5" fill="#DC2626"/><circle cx="16" cy="16" r="2.2" fill="#0A0A0A"/></svg>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;letter-spacing:-0.01em;color:#F5F5F5;">VULCA<span style="color:#DC2626;">PRO</span></span>
+  </a>
+  <div class="desktop-nav" style="display:flex;align-items:center;gap:32px;">
+    <a href="index.html" class="nav-link">Acasă</a>
+    <a href="servicii.html" class="nav-link">Servicii</a>
+    <a href="tarife.html" class="nav-link">Tarife</a>
+    <a href="blog.html" class="nav-link active">Blog</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <a href="tel:0784707404" class="btn-red desktop-nav" style="padding:10px 20px;font-size:13px;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      0784 707 404
+    </a>
+    <button id="hamburger" style="background:none;border:none;cursor:pointer;padding:4px;color:#F5F5F5;" aria-label="Meniu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div id="mobile-menu" style="position:fixed;inset:0;z-index:99;background:rgba(10,10,10,.98);backdrop-filter:blur(16px);flex-direction:column;align-items:center;justify-content:center;gap:28px;">
+  <button id="menu-close" style="position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;color:#F5F5F5;" aria-label="Închide"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <a href="index.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;text-transform:uppercase;">Acasă</a>
+  <a href="servicii.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;text-transform:uppercase;">Servicii</a>
+  <a href="tarife.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;text-transform:uppercase;">Tarife</a>
+  <a href="blog.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#DC2626;text-decoration:none;text-transform:uppercase;">Blog</a>
+  <a href="tel:0784707404" class="btn-red" style="margin-top:8px;font-size:16px;padding:14px 32px;">0784 707 404</a>
+</div>
+
+<!-- PAGE HERO -->
+<section style="background:#0A0A0A;padding:clamp(100px,14vw,160px) clamp(16px,4vw,48px) clamp(40px,6vw,60px);position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:-5%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(220,38,38,.1) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Sfaturi & Ghiduri</p>
+    <h1 class="reveal reveal-d1" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,7vw,88px);font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;color:#F5F5F5;margin:12px 0 16px;line-height:0.92;">
+      Blog<br/><span style="color:#DC2626;">Auto</span>
+    </h1>
+    <p class="reveal reveal-d2" style="color:#6B7280;font-size:clamp(14px,2vw,17px);line-height:1.7;max-width:520px;margin:0;">
+      Ghiduri practice despre anvelope, geometrie și întreținere — scrise de mecanicii noștri, pentru șoferii din București.
+    </p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px) clamp(64px,10vw,100px);">
+
+  <!-- Filter -->
+  <div class="reveal" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;" role="group" aria-label="Filtrare articole">
+    <button class="filter-btn active" data-filter="all">Toate</button>
+    <button class="filter-btn" data-filter="siguranta">Siguranță</button>
+    <button class="filter-btn" data-filter="intretinere">Întreținere</button>
+    <button class="filter-btn" data-filter="anvelope">Anvelope</button>
+  </div>
+
+  <!-- Featured article -->
+  <div class="reveal reveal-d1" style="margin-bottom:40px;">
+    <a href="blog-post.html?slug=cand-schimbi-anvelopele" class="featured-card" data-category="intretinere">
+      <div style="position:relative;overflow:hidden;">
+        <img class="featured-img" src="Assets/blog/blog-iarna.jpg" alt="Când schimbi anvelopele sezonier" loading="eager" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(10,10,10,.8));pointer-events:none;"></div>
+        <div style="position:absolute;top:20px;left:20px;">
+          <span style="display:inline-flex;align-items:center;gap:6px;background:#DC2626;padding:5px 12px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Articol Recomandat
+          </span>
+        </div>
+      </div>
+      <div style="padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;justify-content:center;gap:16px;">
+        <span class="cat cat-intretinere">Întreținere</span>
+        <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:900;text-transform:uppercase;letter-spacing:0.01em;color:#F5F5F5;margin:0;line-height:1.1;">Când este momentul să schimbi anvelopele sezonier?</h2>
+        <p style="color:#6B7280;font-size:14px;line-height:1.7;margin:0;">Temperatura sub 7°C nu este singurul semnal. Ghid complet pentru a lua decizia corectă — când treci la iarnă, când revii la vară și ce verifici la fiecare schimb.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <span style="font-size:12px;color:#6B7280;">15 Jan 2025 · 5 min citire</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#DC2626;">Citește articolul →</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Article grid -->
+  <div id="articles-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:rgba(255,255,255,.04);">
+
+    <a href="blog-post.html?slug=geometrie-roti-de-ce-conteaza" class="blog-card reveal reveal-d1" data-category="siguranta">
+      <div class="blog-img-wrap">
+        <img class="blog-img" src="Assets/blog/blog-frane.jpg" alt="Geometria roților" loading="lazy" />
+      </div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1;">
+        <span class="cat cat-siguranta">Siguranță</span>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;color:#F5F5F5;margin:0;line-height:1.2;">Geometria roților: de ce îți afectează siguranța</h3>
+        <p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0;flex:1;">O geometrie dereglată poate costa mii de lei în anvelope uzate prematur și crește riscul de accident.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;color:#4B5563;">20 Feb 2025</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#DC2626;">6 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="blog-post.html?slug=echilibrare-semne" class="blog-card reveal reveal-d2" data-category="intretinere">
+      <div class="blog-img-wrap">
+        <img class="blog-img" src="Assets/blog/blog-featured.jpg" alt="Echilibrare roți" loading="lazy" />
+      </div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1;">
+        <span class="cat cat-intretinere">Întreținere</span>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;color:#F5F5F5;margin:0;line-height:1.2;">5 semne că roțile au nevoie de echilibrare urgentă</h3>
+        <p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0;flex:1;">Vibrații în volan, uzură neuniformă, consum crescut. Când nu mai poți amâna.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;color:#4B5563;">03 Feb 2025</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#DC2626;">4 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="blog-post.html?slug=anvelope-vara-vs-iarna" class="blog-card reveal reveal-d3" data-category="anvelope">
+      <div class="blog-img-wrap">
+        <img class="blog-img" src="placehold.co/800x450/111111/DC2626?text=Anvelope+Vara+vs+Iarna" alt="Anvelope vară vs iarnă" loading="lazy" onerror="this.src='https://placehold.co/800x450/111111/DC2626?text=Anvelope'" />
+      </div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1;">
+        <span class="cat cat-anvelope">Anvelope</span>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;color:#F5F5F5;margin:0;line-height:1.2;">Anvelope de vară vs. iarnă vs. all-season: care sunt potrivite?</h3>
+        <p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0;flex:1;">Pros și cons pentru fiecare tip. Ce funcționează în traficul urban din București.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;color:#4B5563;">28 Feb 2025</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#DC2626;">7 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="blog-post.html?slug=presiune-anvelope" class="blog-card reveal reveal-d1" data-category="siguranta">
+      <div class="blog-img-wrap">
+        <img class="blog-img" src="https://placehold.co/800x450/111111/DC2626?text=Presiune+Anvelope" alt="Presiunea anvelopelor" loading="lazy" />
+      </div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1;">
+        <span class="cat cat-siguranta">Siguranță</span>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;color:#F5F5F5;margin:0;line-height:1.2;">Presiunea corectă în anvelope: de ce este critică</h3>
+        <p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0;flex:1;">O diferență de 0.3 bar poate crește consumul cu 3% și reduce durata anvelopei cu 15%. Ghid practic.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;color:#4B5563;">10 Mar 2025</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#DC2626;">4 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="blog-post.html?slug=run-flat-merita" class="blog-card reveal reveal-d2" data-category="anvelope">
+      <div class="blog-img-wrap">
+        <img class="blog-img" src="https://placehold.co/800x450/111111/DC2626?text=Run+Flat+Anvelope" alt="Anvelope Run Flat" loading="lazy" />
+      </div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1;">
+        <span class="cat cat-anvelope">Anvelope</span>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;color:#F5F5F5;margin:0;line-height:1.2;">Anvelope Run Flat: ce sunt, avantaje și cât costă</h3>
+        <p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0;flex:1;">Poți continua să conduci cu o pană. Dar merită prețul mai mare și limitările lor? Răspuns complet.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;color:#4B5563;">18 Mar 2025</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#DC2626;">6 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="blog-post.html?slug=uzura-anvelope-semne" class="blog-card reveal reveal-d3" data-category="intretinere">
+      <div class="blog-img-wrap">
+        <img class="blog-img" src="https://placehold.co/800x450/111111/DC2626?text=Uzura+Anvelopei" alt="Uzura anvelopei" loading="lazy" />
+      </div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1;">
+        <span class="cat cat-intretinere">Întreținere</span>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;color:#F5F5F5;margin:0;line-height:1.2;">Cum citești uzura anvelopei: ghid vizual complet</h3>
+        <p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0;flex:1;">Uzura centrală, laterală sau neuniformă — ce îți spune fiecare tipar despre starea mașinii tale.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;color:#4B5563;">05 Mar 2025</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#DC2626;">5 min</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- No results message (hidden) -->
+  <div id="no-results" style="display:none;text-align:center;padding:60px 20px;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#4B5563;text-transform:uppercase;letter-spacing:0.05em;">Niciun articol în această categorie</p>
+  </div>
+
+</main>
+
+<!-- CTA strip -->
+<section style="background:#DC2626;padding:clamp(40px,6vw,64px) clamp(16px,4vw,48px);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+    <div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,3vw,40px);font-weight:900;text-transform:uppercase;color:#fff;margin:0 0 4px;">Ai întrebări? Sunăm.</h2>
+      <p style="color:rgba(255,255,255,.75);font-size:14px;margin:0;">Răspundem rapid și gratuit. Str. Dorobanți 33, București.</p>
+    </div>
+    <a href="tel:0784707404" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#DC2626;padding:14px 28px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;white-space:nowrap;transition:transform .18s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#DC2626" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      0784 707 404
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0A0A0A;border-top:1px solid rgba(220,38,38,.15);padding:clamp(32px,4vw,48px) clamp(16px,4vw,48px);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="#DC2626" stroke-width="4"/><circle cx="16" cy="16" r="5" fill="#DC2626"/><circle cx="16" cy="16" r="2.2" fill="#0A0A0A"/></svg>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:#F5F5F5;">VULCA<span style="color:#DC2626;">PRO</span></span>
+    </a>
+    <p style="color:#4B5563;font-size:12px;margin:0;">© 2025 VulcaPro — Str. Dorobanți 33, București</p>
+    <div style="display:flex;gap:20px;">
+      <a href="index.html" style="color:#6B7280;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Acasă</a>
+      <a href="servicii.html" style="color:#6B7280;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Servicii</a>
+      <a href="tarife.html" style="color:#6B7280;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#F5F5F5'" onmouseout="this.style.color='#6B7280'">Tarife</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>40),{passive:true});
+  const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobile-menu'),menuClose=document.getElementById('menu-close');
+  function openMenu(){mobileMenu.classList.add('open');document.body.style.overflow='hidden';hamburger.setAttribute('aria-expanded','true')}
+  function closeMenu(){mobileMenu.classList.remove('open');document.body.style.overflow='';hamburger.setAttribute('aria-expanded','false')}
+  hamburger.addEventListener('click',openMenu);menuClose.addEventListener('click',closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+
+  const reveals=document.querySelectorAll('.reveal');
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  reveals.forEach(el=>io.observe(el));
+
+  // Filter
+  const filterBtns=document.querySelectorAll('.filter-btn');
+  const cards=document.querySelectorAll('#articles-grid .blog-card');
+  const noResults=document.getElementById('no-results');
+  filterBtns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      filterBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter=btn.dataset.filter;
+      let visible=0;
+      cards.forEach(card=>{
+        const cat=card.dataset.category;
+        const show=filter==='all'||cat===filter;
+        card.style.display=show?'flex':'none';
+        if(show)visible++;
+      });
+      noResults.style.display=visible===0?'block':'none';
+    });
+  });
+</script>
+
+<!-- WhatsApp Floater -->
+<a href="https://wa.me/40784707404?text=Bun%C4%83%2C%20a%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20serviciile%20VulcaPro."
+   target="_blank" rel="noopener noreferrer" aria-label="Contactează-ne pe WhatsApp"
+   onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 32px rgba(37,211,102,0.6),0 2px 8px rgba(0,0,0,0.4)'"
+   onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 24px rgba(37,211,102,0.45),0 2px 8px rgba(0,0,0,0.4)'"
+   style="position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.45),0 2px 8px rgba(0,0,0,0.4);text-decoration:none;transition:transform 0.2s cubic-bezier(0.16,1,0.3,1),box-shadow 0.2s;">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+</body>
+</html>

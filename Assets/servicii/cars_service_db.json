@@ -1,0 +1,6537 @@
+{
+  "version": "1.0",
+  "description": "Baza de date mărci/modele auto - Service Auto România",
+  "updated": "2026-03-23",
+  "brands": [
+    {
+      "brand": "Dacia",
+      "country": "RO",
+      "models": [
+        {
+          "model": "Logan",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2004,
+                2012
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2012,
+                2020
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Logan MCV",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2006,
+                2013
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2013,
+                2022
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Sandero",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2008,
+                2012
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2012,
+                2020
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Sandero Stepway",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2009,
+                2012
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2012,
+                2020
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Duster",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2010,
+                2017
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2017,
+                2024
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Jogger",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Spring",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Dokker",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2021
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Lodgy",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2022
+              ]
+            }
+          ]
+        },
+        {
+          "model": "1310 / 1300",
+          "generations": [
+            {
+              "gen": "-",
+              "years": [
+                1969,
+                2004
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Solenza",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2003,
+                2005
+              ]
+            }
+          ]
+        },
+        {
+          "model": "SuperNova",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2000,
+                2003
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Volkswagen",
+      "country": "DE",
+      "models": [
+        {
+          "model": "Golf",
+          "generations": [
+            {
+              "gen": "IV",
+              "years": [
+                1997,
+                2003
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2003,
+                2008
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2008,
+                2012
+              ]
+            },
+            {
+              "gen": "VII",
+              "years": [
+                2012,
+                2019
+              ]
+            },
+            {
+              "gen": "VIII",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Polo",
+          "generations": [
+            {
+              "gen": "IV",
+              "years": [
+                2001,
+                2009
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2009,
+                2017
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Passat",
+          "generations": [
+            {
+              "gen": "B5",
+              "years": [
+                1996,
+                2005
+              ]
+            },
+            {
+              "gen": "B6",
+              "years": [
+                2005,
+                2010
+              ]
+            },
+            {
+              "gen": "B7",
+              "years": [
+                2010,
+                2014
+              ]
+            },
+            {
+              "gen": "B8",
+              "years": [
+                2014,
+                2023
+              ]
+            },
+            {
+              "gen": "B9",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Tiguan",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2007,
+                2016
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2016,
+                2024
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Touran",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2003,
+                2015
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2015,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "T-Roc",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "T-Cross",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Touareg",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2002,
+                2010
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2010,
+                2018
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Arteon",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Caddy",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2004,
+                2015
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2015,
+                2020
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Transporter / T5 / T6",
+          "generations": [
+            {
+              "gen": "T5",
+              "years": [
+                2003,
+                2015
+              ]
+            },
+            {
+              "gen": "T6",
+              "years": [
+                2015,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Jetta",
+          "generations": [
+            {
+              "gen": "V",
+              "years": [
+                2005,
+                2010
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2010,
+                2018
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Sharan",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                1995,
+                2010
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2010,
+                2022
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Up!",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2011,
+                2023
+              ]
+            }
+          ]
+        },
+        {
+          "model": "ID.3",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "ID.4",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "ID.7",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Taigo",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "country": "DE",
+      "models": [
+        {
+          "model": "Seria 1",
+          "generations": [
+            {
+              "gen": "E87",
+              "years": [
+                2004,
+                2011
+              ]
+            },
+            {
+              "gen": "F20/F21",
+              "years": [
+                2011,
+                2019
+              ]
+            },
+            {
+              "gen": "F40",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Seria 2",
+          "generations": [
+            {
+              "gen": "F22/F23",
+              "years": [
+                2014,
+                2021
+              ]
+            },
+            {
+              "gen": "G42/G44",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Seria 3",
+          "generations": [
+            {
+              "gen": "E46",
+              "years": [
+                1998,
+                2005
+              ]
+            },
+            {
+              "gen": "E90/E91",
+              "years": [
+                2005,
+                2011
+              ]
+            },
+            {
+              "gen": "F30/F31",
+              "years": [
+                2011,
+                2018
+              ]
+            },
+            {
+              "gen": "G20/G21",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Seria 4",
+          "generations": [
+            {
+              "gen": "F32/F33",
+              "years": [
+                2013,
+                2020
+              ]
+            },
+            {
+              "gen": "G22/G23",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Seria 5",
+          "generations": [
+            {
+              "gen": "E39",
+              "years": [
+                1995,
+                2003
+              ]
+            },
+            {
+              "gen": "E60/E61",
+              "years": [
+                2003,
+                2010
+              ]
+            },
+            {
+              "gen": "F10/F11",
+              "years": [
+                2010,
+                2016
+              ]
+            },
+            {
+              "gen": "G30/G31",
+              "years": [
+                2016,
+                2023
+              ]
+            },
+            {
+              "gen": "G60",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Seria 7",
+          "generations": [
+            {
+              "gen": "E65",
+              "years": [
+                2001,
+                2008
+              ]
+            },
+            {
+              "gen": "F01",
+              "years": [
+                2008,
+                2015
+              ]
+            },
+            {
+              "gen": "G11/G12",
+              "years": [
+                2015,
+                2022
+              ]
+            },
+            {
+              "gen": "G70",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "X1",
+          "generations": [
+            {
+              "gen": "E84",
+              "years": [
+                2009,
+                2015
+              ]
+            },
+            {
+              "gen": "F48",
+              "years": [
+                2015,
+                2022
+              ]
+            },
+            {
+              "gen": "U11",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "X3",
+          "generations": [
+            {
+              "gen": "E83",
+              "years": [
+                2003,
+                2010
+              ]
+            },
+            {
+              "gen": "F25",
+              "years": [
+                2010,
+                2017
+              ]
+            },
+            {
+              "gen": "G01",
+              "years": [
+                2017,
+                2024
+              ]
+            },
+            {
+              "gen": "G45",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "X5",
+          "generations": [
+            {
+              "gen": "E53",
+              "years": [
+                1999,
+                2006
+              ]
+            },
+            {
+              "gen": "E70",
+              "years": [
+                2006,
+                2013
+              ]
+            },
+            {
+              "gen": "F15",
+              "years": [
+                2013,
+                2018
+              ]
+            },
+            {
+              "gen": "G05",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "X6",
+          "generations": [
+            {
+              "gen": "E71",
+              "years": [
+                2008,
+                2014
+              ]
+            },
+            {
+              "gen": "F16",
+              "years": [
+                2014,
+                2019
+              ]
+            },
+            {
+              "gen": "G06",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "X7",
+          "generations": [
+            {
+              "gen": "G07",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "iX",
+          "generations": [
+            {
+              "gen": "I20",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "i4",
+          "generations": [
+            {
+              "gen": "G26",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "i3",
+          "generations": [
+            {
+              "gen": "I01",
+              "years": [
+                2013,
+                2022
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "country": "DE",
+      "models": [
+        {
+          "model": "Clasa A",
+          "generations": [
+            {
+              "gen": "W168",
+              "years": [
+                1997,
+                2004
+              ]
+            },
+            {
+              "gen": "W169",
+              "years": [
+                2004,
+                2012
+              ]
+            },
+            {
+              "gen": "W176",
+              "years": [
+                2012,
+                2018
+              ]
+            },
+            {
+              "gen": "W177",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Clasa B",
+          "generations": [
+            {
+              "gen": "W245",
+              "years": [
+                2005,
+                2011
+              ]
+            },
+            {
+              "gen": "W246",
+              "years": [
+                2011,
+                2018
+              ]
+            },
+            {
+              "gen": "W247",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Clasa C",
+          "generations": [
+            {
+              "gen": "W203",
+              "years": [
+                2000,
+                2007
+              ]
+            },
+            {
+              "gen": "W204",
+              "years": [
+                2007,
+                2014
+              ]
+            },
+            {
+              "gen": "W205",
+              "years": [
+                2014,
+                2021
+              ]
+            },
+            {
+              "gen": "W206",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Clasa E",
+          "generations": [
+            {
+              "gen": "W211",
+              "years": [
+                2002,
+                2009
+              ]
+            },
+            {
+              "gen": "W212",
+              "years": [
+                2009,
+                2016
+              ]
+            },
+            {
+              "gen": "W213",
+              "years": [
+                2016,
+                2023
+              ]
+            },
+            {
+              "gen": "W214",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Clasa S",
+          "generations": [
+            {
+              "gen": "W220",
+              "years": [
+                1998,
+                2005
+              ]
+            },
+            {
+              "gen": "W221",
+              "years": [
+                2005,
+                2013
+              ]
+            },
+            {
+              "gen": "W222",
+              "years": [
+                2013,
+                2020
+              ]
+            },
+            {
+              "gen": "W223",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "CLA",
+          "generations": [
+            {
+              "gen": "C117",
+              "years": [
+                2013,
+                2019
+              ]
+            },
+            {
+              "gen": "C118",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "GLA",
+          "generations": [
+            {
+              "gen": "X156",
+              "years": [
+                2013,
+                2019
+              ]
+            },
+            {
+              "gen": "H247",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "GLB",
+          "generations": [
+            {
+              "gen": "X247",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "GLC",
+          "generations": [
+            {
+              "gen": "X253",
+              "years": [
+                2015,
+                2022
+              ]
+            },
+            {
+              "gen": "X254",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "GLE",
+          "generations": [
+            {
+              "gen": "W166",
+              "years": [
+                2011,
+                2019
+              ]
+            },
+            {
+              "gen": "W167",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "GLS",
+          "generations": [
+            {
+              "gen": "X166",
+              "years": [
+                2015,
+                2019
+              ]
+            },
+            {
+              "gen": "X167",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Sprinter",
+          "generations": [
+            {
+              "gen": "W906",
+              "years": [
+                2006,
+                2018
+              ]
+            },
+            {
+              "gen": "W907",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Vito",
+          "generations": [
+            {
+              "gen": "W639",
+              "years": [
+                2003,
+                2014
+              ]
+            },
+            {
+              "gen": "W447",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "EQA",
+          "generations": [
+            {
+              "gen": "H243",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "EQC",
+          "generations": [
+            {
+              "gen": "N293",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "country": "DE",
+      "models": [
+        {
+          "model": "A1",
+          "generations": [
+            {
+              "gen": "8X",
+              "years": [
+                2010,
+                2018
+              ]
+            },
+            {
+              "gen": "GB",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "A3",
+          "generations": [
+            {
+              "gen": "8P",
+              "years": [
+                2003,
+                2012
+              ]
+            },
+            {
+              "gen": "8V",
+              "years": [
+                2012,
+                2020
+              ]
+            },
+            {
+              "gen": "8Y",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "A4",
+          "generations": [
+            {
+              "gen": "B6",
+              "years": [
+                2000,
+                2004
+              ]
+            },
+            {
+              "gen": "B7",
+              "years": [
+                2004,
+                2008
+              ]
+            },
+            {
+              "gen": "B8",
+              "years": [
+                2008,
+                2015
+              ]
+            },
+            {
+              "gen": "B9",
+              "years": [
+                2015,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "A5",
+          "generations": [
+            {
+              "gen": "8T",
+              "years": [
+                2007,
+                2016
+              ]
+            },
+            {
+              "gen": "F5",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "A6",
+          "generations": [
+            {
+              "gen": "C5",
+              "years": [
+                1997,
+                2004
+              ]
+            },
+            {
+              "gen": "C6",
+              "years": [
+                2004,
+                2011
+              ]
+            },
+            {
+              "gen": "C7",
+              "years": [
+                2011,
+                2018
+              ]
+            },
+            {
+              "gen": "C8",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "A7",
+          "generations": [
+            {
+              "gen": "4G",
+              "years": [
+                2010,
+                2018
+              ]
+            },
+            {
+              "gen": "4K",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "A8",
+          "generations": [
+            {
+              "gen": "D3",
+              "years": [
+                2002,
+                2009
+              ]
+            },
+            {
+              "gen": "D4",
+              "years": [
+                2009,
+                2017
+              ]
+            },
+            {
+              "gen": "D5",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Q2",
+          "generations": [
+            {
+              "gen": "GA",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Q3",
+          "generations": [
+            {
+              "gen": "8U",
+              "years": [
+                2011,
+                2018
+              ]
+            },
+            {
+              "gen": "F3",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Q5",
+          "generations": [
+            {
+              "gen": "8R",
+              "years": [
+                2008,
+                2016
+              ]
+            },
+            {
+              "gen": "FY",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Q7",
+          "generations": [
+            {
+              "gen": "4L",
+              "years": [
+                2005,
+                2015
+              ]
+            },
+            {
+              "gen": "4M",
+              "years": [
+                2015,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Q8",
+          "generations": [
+            {
+              "gen": "4M",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "e-tron",
+          "generations": [
+            {
+              "gen": "GE",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Q4 e-tron",
+          "generations": [
+            {
+              "gen": "F4",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "TT",
+          "generations": [
+            {
+              "gen": "8N",
+              "years": [
+                1998,
+                2006
+              ]
+            },
+            {
+              "gen": "8J",
+              "years": [
+                2006,
+                2014
+              ]
+            },
+            {
+              "gen": "8S",
+              "years": [
+                2014,
+                2023
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Skoda",
+      "country": "CZ",
+      "models": [
+        {
+          "model": "Octavia",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                1996,
+                2004
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2004,
+                2013
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2013,
+                2020
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Fabia",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                1999,
+                2007
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2007,
+                2014
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2014,
+                2021
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Superb",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2001,
+                2008
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2008,
+                2015
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2015,
+                2024
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Kodiaq",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2016,
+                2024
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Karoq",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Kamiq",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Scala",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Rapid",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2019
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Roomster",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2006,
+                2015
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Yeti",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2009,
+                2017
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Citigo",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2011,
+                2020
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Enyaq",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Ford",
+      "country": "US",
+      "models": [
+        {
+          "model": "Focus",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                1998,
+                2004
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2004,
+                2011
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2011,
+                2018
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2018,
+                2025
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Fiesta",
+          "generations": [
+            {
+              "gen": "V",
+              "years": [
+                2002,
+                2008
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2008,
+                2017
+              ]
+            },
+            {
+              "gen": "VII",
+              "years": [
+                2017,
+                2023
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Mondeo",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2000,
+                2007
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2007,
+                2014
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2014,
+                2022
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Kuga",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2008,
+                2012
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2012,
+                2019
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "EcoSport",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2013,
+                2022
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Puma",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Transit",
+          "generations": [
+            {
+              "gen": "V",
+              "years": [
+                2000,
+                2006
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2006,
+                2013
+              ]
+            },
+            {
+              "gen": "VII",
+              "years": [
+                2013,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Transit Connect",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2002,
+                2013
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2013,
+                2024
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Ranger",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2011,
+                2022
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Mustang Mach-E",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Explorer",
+          "generations": [
+            {
+              "gen": "VI",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Galaxy",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2006,
+                2015
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2015,
+                2023
+              ]
+            }
+          ]
+        },
+        {
+          "model": "S-Max",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2006,
+                2015
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2015,
+                2023
+              ]
+            }
+          ]
+        },
+        {
+          "model": "C-Max",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2003,
+                2010
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2010,
+                2019
+              ]
+            }
+          ]
+        },
+        {
+          "model": "B-Max",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2017
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Opel",
+      "country": "DE",
+      "models": [
+        {
+          "model": "Astra",
+          "generations": [
+            {
+              "gen": "G",
+              "years": [
+                1998,
+                2004
+              ]
+            },
+            {
+              "gen": "H",
+              "years": [
+                2004,
+                2009
+              ]
+            },
+            {
+              "gen": "J",
+              "years": [
+                2009,
+                2015
+              ]
+            },
+            {
+              "gen": "K",
+              "years": [
+                2015,
+                2021
+              ]
+            },
+            {
+              "gen": "L",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Corsa",
+          "generations": [
+            {
+              "gen": "C",
+              "years": [
+                2000,
+                2006
+              ]
+            },
+            {
+              "gen": "D",
+              "years": [
+                2006,
+                2014
+              ]
+            },
+            {
+              "gen": "E",
+              "years": [
+                2014,
+                2019
+              ]
+            },
+            {
+              "gen": "F",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Insignia",
+          "generations": [
+            {
+              "gen": "A",
+              "years": [
+                2008,
+                2017
+              ]
+            },
+            {
+              "gen": "B",
+              "years": [
+                2017,
+                2024
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Mokka",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2020
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Crossland",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Grandland",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2024
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Combo",
+          "generations": [
+            {
+              "gen": "D",
+              "years": [
+                2011,
+                2018
+              ]
+            },
+            {
+              "gen": "E",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Zafira",
+          "generations": [
+            {
+              "gen": "A",
+              "years": [
+                1999,
+                2005
+              ]
+            },
+            {
+              "gen": "B",
+              "years": [
+                2005,
+                2014
+              ]
+            },
+            {
+              "gen": "C (Tourer)",
+              "years": [
+                2011,
+                2019
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Meriva",
+          "generations": [
+            {
+              "gen": "A",
+              "years": [
+                2003,
+                2010
+              ]
+            },
+            {
+              "gen": "B",
+              "years": [
+                2010,
+                2017
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Vectra",
+          "generations": [
+            {
+              "gen": "B",
+              "years": [
+                1995,
+                2002
+              ]
+            },
+            {
+              "gen": "C",
+              "years": [
+                2002,
+                2008
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Vivaro",
+          "generations": [
+            {
+              "gen": "A",
+              "years": [
+                2001,
+                2014
+              ]
+            },
+            {
+              "gen": "B",
+              "years": [
+                2014,
+                2019
+              ]
+            },
+            {
+              "gen": "C",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Renault",
+      "country": "FR",
+      "models": [
+        {
+          "model": "Clio",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                1998,
+                2005
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2005,
+                2012
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2012,
+                2019
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Megane",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2002,
+                2008
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2008,
+                2015
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2015,
+                2023
+              ]
+            },
+            {
+              "gen": "E-Tech",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Scenic",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2003,
+                2009
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2009,
+                2016
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2016,
+                2023
+              ]
+            },
+            {
+              "gen": "V (E-Tech)",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Captur",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2013,
+                2019
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Kadjar",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2015,
+                2022
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Austral",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Koleos",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2008,
+                2016
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2016,
+                2024
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Laguna",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2001,
+                2007
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2007,
+                2015
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Talisman",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2015,
+                2022
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Kangoo",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                1997,
+                2007
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2007,
+                2021
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Master",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2003,
+                2010
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2010,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Trafic",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2001,
+                2014
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Twingo",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2007,
+                2014
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2014,
+                2024
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Zoe",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Symbioz",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Peugeot",
+      "country": "FR",
+      "models": [
+        {
+          "model": "208",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2019
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "308",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2007,
+                2013
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2013,
+                2021
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "3008",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2008,
+                2016
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2016,
+                2024
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "5008",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2009,
+                2016
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2017,
+                2024
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "2008",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2013,
+                2019
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "508",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2010,
+                2018
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "108",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2014,
+                2021
+              ]
+            }
+          ]
+        },
+        {
+          "model": "207",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2006,
+                2012
+              ]
+            }
+          ]
+        },
+        {
+          "model": "307",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2001,
+                2008
+              ]
+            }
+          ]
+        },
+        {
+          "model": "407",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2004,
+                2011
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Partner / Rifter",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2008,
+                2018
+              ]
+            },
+            {
+              "gen": "III (Rifter)",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Boxer",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2006,
+                2014
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Expert / Traveller",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2007,
+                2016
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Citroën",
+      "country": "FR",
+      "models": [
+        {
+          "model": "C3",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2002,
+                2009
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2009,
+                2016
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2016,
+                2024
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "C4",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2004,
+                2010
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2010,
+                2018
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "C5 Aircross",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "C3 Aircross",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2024
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "C1",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2005,
+                2014
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2014,
+                2022
+              ]
+            }
+          ]
+        },
+        {
+          "model": "C-Elysée",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2020
+              ]
+            }
+          ]
+        },
+        {
+          "model": "C5",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2001,
+                2008
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2008,
+                2017
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Berlingo",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2008,
+                2018
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Jumpy / SpaceTourer",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2007,
+                2016
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Jumper",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2006,
+                2014
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Toyota",
+      "country": "JP",
+      "models": [
+        {
+          "model": "Corolla",
+          "generations": [
+            {
+              "gen": "E120",
+              "years": [
+                2001,
+                2006
+              ]
+            },
+            {
+              "gen": "E150",
+              "years": [
+                2006,
+                2013
+              ]
+            },
+            {
+              "gen": "E210",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Yaris",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                1999,
+                2005
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2005,
+                2011
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2011,
+                2020
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Yaris Cross",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "RAV4",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2005,
+                2012
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2012,
+                2018
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "C-HR",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2016,
+                2023
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Aygo / Aygo X",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2005,
+                2014
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2014,
+                2022
+              ]
+            },
+            {
+              "gen": "Aygo X",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Camry",
+          "generations": [
+            {
+              "gen": "XV70",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Land Cruiser",
+          "generations": [
+            {
+              "gen": "J120",
+              "years": [
+                2002,
+                2009
+              ]
+            },
+            {
+              "gen": "J150",
+              "years": [
+                2009,
+                2024
+              ]
+            },
+            {
+              "gen": "J250",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Hilux",
+          "generations": [
+            {
+              "gen": "VII",
+              "years": [
+                2005,
+                2015
+              ]
+            },
+            {
+              "gen": "VIII",
+              "years": [
+                2015,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Proace",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2013,
+                2016
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Avensis",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2003,
+                2009
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2009,
+                2018
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Auris",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2006,
+                2012
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2012,
+                2018
+              ]
+            }
+          ]
+        },
+        {
+          "model": "bZ4X",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Supra",
+          "generations": [
+            {
+              "gen": "A90",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Hyundai",
+      "country": "KR",
+      "models": [
+        {
+          "model": "Tucson",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2004,
+                2009
+              ]
+            },
+            {
+              "gen": "II (ix35)",
+              "years": [
+                2009,
+                2015
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2015,
+                2020
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "i30",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2007,
+                2011
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2011,
+                2017
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "i20",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2008,
+                2014
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2014,
+                2020
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "i10",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2007,
+                2013
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2013,
+                2019
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Kona",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2023
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Santa Fe",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2006,
+                2012
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2012,
+                2018
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2018,
+                2024
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "ix20",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2010,
+                2019
+              ]
+            }
+          ]
+        },
+        {
+          "model": "ix55",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2006,
+                2012
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Ioniq",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2016,
+                2022
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Ioniq 5",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Ioniq 6",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Bayon",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Elantra",
+          "generations": [
+            {
+              "gen": "V",
+              "years": [
+                2010,
+                2015
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2015,
+                2020
+              ]
+            },
+            {
+              "gen": "VII",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Kia",
+      "country": "KR",
+      "models": [
+        {
+          "model": "Ceed",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2006,
+                2012
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2012,
+                2018
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Sportage",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2004,
+                2010
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2010,
+                2015
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2015,
+                2021
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Picanto",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2004,
+                2011
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2011,
+                2017
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Rio",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2005,
+                2011
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2011,
+                2017
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Sorento",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2002,
+                2009
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2009,
+                2014
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2014,
+                2020
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Niro",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2016,
+                2022
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Stonic",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "XCeed",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Venga",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2009,
+                2019
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Optima",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2010,
+                2015
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2015,
+                2020
+              ]
+            }
+          ]
+        },
+        {
+          "model": "EV6",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "EV9",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "ProCeed",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Nissan",
+      "country": "JP",
+      "models": [
+        {
+          "model": "Qashqai",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2006,
+                2013
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2013,
+                2021
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Juke",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2010,
+                2019
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "X-Trail",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2001,
+                2007
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2007,
+                2013
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2013,
+                2022
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Micra",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2003,
+                2010
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2010,
+                2017
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Note",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2004,
+                2012
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2012,
+                2020
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Leaf",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2010,
+                2017
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Navara",
+          "generations": [
+            {
+              "gen": "D40",
+              "years": [
+                2005,
+                2014
+              ]
+            },
+            {
+              "gen": "D23",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Pathfinder",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2004,
+                2012
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2012,
+                2021
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Pulsar",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2014,
+                2018
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Ariya",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Townstar",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Honda",
+      "country": "JP",
+      "models": [
+        {
+          "model": "Civic",
+          "generations": [
+            {
+              "gen": "VII",
+              "years": [
+                2001,
+                2005
+              ]
+            },
+            {
+              "gen": "VIII",
+              "years": [
+                2005,
+                2011
+              ]
+            },
+            {
+              "gen": "IX",
+              "years": [
+                2011,
+                2016
+              ]
+            },
+            {
+              "gen": "X",
+              "years": [
+                2016,
+                2021
+              ]
+            },
+            {
+              "gen": "XI",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "CR-V",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2001,
+                2006
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2006,
+                2011
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2012,
+                2017
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2017,
+                2023
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "HR-V",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2015,
+                2021
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Jazz / Fit",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2007,
+                2013
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2013,
+                2020
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "ZR-V",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "e:Ny1",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Accord",
+          "generations": [
+            {
+              "gen": "VII",
+              "years": [
+                2002,
+                2007
+              ]
+            },
+            {
+              "gen": "VIII",
+              "years": [
+                2008,
+                2012
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Mazda",
+      "country": "JP",
+      "models": [
+        {
+          "model": "Mazda3",
+          "generations": [
+            {
+              "gen": "I (BK)",
+              "years": [
+                2003,
+                2009
+              ]
+            },
+            {
+              "gen": "II (BL)",
+              "years": [
+                2009,
+                2013
+              ]
+            },
+            {
+              "gen": "III (BM)",
+              "years": [
+                2013,
+                2019
+              ]
+            },
+            {
+              "gen": "IV (BP)",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Mazda6",
+          "generations": [
+            {
+              "gen": "I (GG)",
+              "years": [
+                2002,
+                2007
+              ]
+            },
+            {
+              "gen": "II (GH)",
+              "years": [
+                2007,
+                2012
+              ]
+            },
+            {
+              "gen": "III (GJ/GL)",
+              "years": [
+                2012,
+                2023
+              ]
+            }
+          ]
+        },
+        {
+          "model": "CX-3",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2015,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "CX-30",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "CX-5",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2017
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "CX-60",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "CX-80",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "MX-30",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Mazda2",
+          "generations": [
+            {
+              "gen": "II (DE)",
+              "years": [
+                2007,
+                2014
+              ]
+            },
+            {
+              "gen": "III (DJ)",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Volvo",
+      "country": "SE",
+      "models": [
+        {
+          "model": "XC60",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2008,
+                2017
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "XC90",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2002,
+                2014
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "XC40",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "V40",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2019
+              ]
+            }
+          ]
+        },
+        {
+          "model": "V60",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2010,
+                2018
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "V90",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "S60",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2000,
+                2010
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2010,
+                2018
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "S90",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "C30",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2006,
+                2012
+              ]
+            }
+          ]
+        },
+        {
+          "model": "C40 Recharge",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "EX30",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "EX90",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Fiat",
+      "country": "IT",
+      "models": [
+        {
+          "model": "Punto",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                1999,
+                2010
+              ]
+            },
+            {
+              "gen": "III (Grande/Evo)",
+              "years": [
+                2005,
+                2018
+              ]
+            }
+          ]
+        },
+        {
+          "model": "500",
+          "generations": [
+            {
+              "gen": "I (retro)",
+              "years": [
+                2007,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "500e",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "500X",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Panda",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2003,
+                2012
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2012,
+                2024
+              ]
+            },
+            {
+              "gen": "Grande Panda",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Tipo / Egea",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2015,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Doblo",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2000,
+                2009
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2010,
+                2022
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Ducato",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2006,
+                2014
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "600e",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Bravo",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2007,
+                2014
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Stilo",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2001,
+                2007
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Seat",
+      "country": "ES",
+      "models": [
+        {
+          "model": "Leon",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                1999,
+                2005
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2005,
+                2012
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2012,
+                2020
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Ibiza",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2002,
+                2008
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2008,
+                2017
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Arona",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Ateca",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Tarraco",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Alhambra",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2010,
+                2022
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Toledo",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2004,
+                2009
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2012,
+                2019
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Altea",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2004,
+                2015
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Cupra",
+      "country": "ES",
+      "models": [
+        {
+          "model": "Formentor",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Born",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Leon",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Ateca",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Tavascan",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Suzuki",
+      "country": "JP",
+      "models": [
+        {
+          "model": "Vitara",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2005,
+                2014
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "SX4 / S-Cross",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2006,
+                2013
+              ]
+            },
+            {
+              "gen": "II (S-Cross)",
+              "years": [
+                2013,
+                2022
+              ]
+            },
+            {
+              "gen": "III (S-Cross)",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Swift",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2005,
+                2010
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2010,
+                2017
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2017,
+                2024
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Jimny",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                1998,
+                2018
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Ignis",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Across",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Swace",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Mitsubishi",
+      "country": "JP",
+      "models": [
+        {
+          "model": "Outlander",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2006,
+                2012
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2012,
+                2021
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "ASX",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2010,
+                2023
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "L200",
+          "generations": [
+            {
+              "gen": "IV",
+              "years": [
+                2005,
+                2015
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2015,
+                2024
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Eclipse Cross",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Pajero / Shogun",
+          "generations": [
+            {
+              "gen": "IV",
+              "years": [
+                2006,
+                2021
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Space Star / Mirage",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2012,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Colt",
+          "generations": [
+            {
+              "gen": "VI",
+              "years": [
+                2002,
+                2012
+              ]
+            },
+            {
+              "gen": "VII",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Jeep",
+      "country": "US",
+      "models": [
+        {
+          "model": "Renegade",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Compass",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2007,
+                2016
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Cherokee",
+          "generations": [
+            {
+              "gen": "KL",
+              "years": [
+                2013,
+                2023
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Grand Cherokee",
+          "generations": [
+            {
+              "gen": "WJ",
+              "years": [
+                1999,
+                2004
+              ]
+            },
+            {
+              "gen": "WK",
+              "years": [
+                2005,
+                2010
+              ]
+            },
+            {
+              "gen": "WK2",
+              "years": [
+                2010,
+                2021
+              ]
+            },
+            {
+              "gen": "WL",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Wrangler",
+          "generations": [
+            {
+              "gen": "TJ",
+              "years": [
+                1997,
+                2006
+              ]
+            },
+            {
+              "gen": "JK",
+              "years": [
+                2006,
+                2018
+              ]
+            },
+            {
+              "gen": "JL",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Avenger",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Land Rover",
+      "country": "GB",
+      "models": [
+        {
+          "model": "Range Rover Evoque",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2011,
+                2019
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Range Rover Sport",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2005,
+                2013
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2013,
+                2022
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Range Rover Velar",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Range Rover",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2002,
+                2012
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2012,
+                2022
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Discovery",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2004,
+                2009
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2009,
+                2016
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Discovery Sport",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2014,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Freelander",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                1997,
+                2006
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2006,
+                2014
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Defender",
+          "generations": [
+            {
+              "gen": "New",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Alfa Romeo",
+      "country": "IT",
+      "models": [
+        {
+          "model": "Giulietta",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2010,
+                2020
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Giulia",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2016,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Stelvio",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Tonale",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "MiTo",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2008,
+                2018
+              ]
+            }
+          ]
+        },
+        {
+          "model": "159",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2005,
+                2011
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Junior",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Mini",
+      "country": "GB",
+      "models": [
+        {
+          "model": "Cooper / One",
+          "generations": [
+            {
+              "gen": "R50/R53",
+              "years": [
+                2001,
+                2006
+              ]
+            },
+            {
+              "gen": "R56/R57",
+              "years": [
+                2006,
+                2013
+              ]
+            },
+            {
+              "gen": "F55/F56",
+              "years": [
+                2013,
+                2023
+              ]
+            },
+            {
+              "gen": "J01",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Countryman",
+          "generations": [
+            {
+              "gen": "R60",
+              "years": [
+                2010,
+                2016
+              ]
+            },
+            {
+              "gen": "F60",
+              "years": [
+                2016,
+                2023
+              ]
+            },
+            {
+              "gen": "U25",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Clubman",
+          "generations": [
+            {
+              "gen": "R55",
+              "years": [
+                2007,
+                2014
+              ]
+            },
+            {
+              "gen": "F54",
+              "years": [
+                2015,
+                2024
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Paceman",
+          "generations": [
+            {
+              "gen": "R61",
+              "years": [
+                2012,
+                2016
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Aceman",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Porsche",
+      "country": "DE",
+      "models": [
+        {
+          "model": "Cayenne",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2002,
+                2010
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2010,
+                2017
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Macan",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2014,
+                2024
+              ]
+            },
+            {
+              "gen": "II (EV)",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Panamera",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2009,
+                2016
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2016,
+                2024
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "911",
+          "generations": [
+            {
+              "gen": "997",
+              "years": [
+                2004,
+                2011
+              ]
+            },
+            {
+              "gen": "991",
+              "years": [
+                2011,
+                2019
+              ]
+            },
+            {
+              "gen": "992",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Taycan",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Tesla",
+      "country": "US",
+      "models": [
+        {
+          "model": "Model 3",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2023
+              ]
+            },
+            {
+              "gen": "Highland",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Model Y",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2025
+              ]
+            },
+            {
+              "gen": "Juniper",
+              "years": [
+                2025,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Model S",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2021
+              ]
+            },
+            {
+              "gen": "Refresh",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Model X",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2015,
+                2021
+              ]
+            },
+            {
+              "gen": "Refresh",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Subaru",
+      "country": "JP",
+      "models": [
+        {
+          "model": "Forester",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2008,
+                2012
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2012,
+                2018
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Outback",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2003,
+                2009
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2009,
+                2014
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2014,
+                2020
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "XV / Crosstrek",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2012,
+                2017
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2017,
+                2023
+              ]
+            },
+            {
+              "gen": "III",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Impreza",
+          "generations": [
+            {
+              "gen": "III",
+              "years": [
+                2007,
+                2011
+              ]
+            },
+            {
+              "gen": "IV",
+              "years": [
+                2011,
+                2016
+              ]
+            },
+            {
+              "gen": "V",
+              "years": [
+                2016,
+                2023
+              ]
+            },
+            {
+              "gen": "VI",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Solterra",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "DS",
+      "country": "FR",
+      "models": [
+        {
+          "model": "DS 3 Crossback",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "DS 4",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "DS 7",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2024
+              ]
+            },
+            {
+              "gen": "II",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "DS 9",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "MG",
+      "country": "CN",
+      "models": [
+        {
+          "model": "ZS",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2017,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "ZS EV",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2019,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "MG4",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Marvel R",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "EHS",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2020,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "MG5 EV",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "HS",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2018,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "MG3",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "BYD",
+      "country": "CN",
+      "models": [
+        {
+          "model": "Atto 3",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2022,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Seal",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Seal U",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2024,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Dolphin",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Tang",
+          "generations": [
+            {
+              "gen": "II",
+              "years": [
+                2021,
+                2026
+              ]
+            }
+          ]
+        },
+        {
+          "model": "Han",
+          "generations": [
+            {
+              "gen": "I",
+              "years": [
+                2023,
+                2026
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ,
+    {
+      "brand": "Chevrolet",
+      "country": "US",
+      "models": [
+        { "model": "Aveo", "generations": [{ "gen": "I", "years": [2003,2011] }, { "gen": "II", "years": [2011,2015] }] },
+        { "model": "Cruze", "generations": [{ "gen": "I", "years": [2009,2016] }, { "gen": "II", "years": [2016,2019] }] },
+        { "model": "Captiva", "generations": [{ "gen": "I", "years": [2006,2018] }] },
+        { "model": "Trax", "generations": [{ "gen": "I", "years": [2013,2022] }, { "gen": "II", "years": [2022,2026] }] },
+        { "model": "Spark", "generations": [{ "gen": "III", "years": [2010,2015] }, { "gen": "IV", "years": [2015,2022] }] },
+        { "model": "Orlando", "generations": [{ "gen": "I", "years": [2011,2018] }] },
+        { "model": "Malibu", "generations": [{ "gen": "VIII", "years": [2012,2016] }, { "gen": "IX", "years": [2016,2023] }] },
+        { "model": "Equinox", "generations": [{ "gen": "II", "years": [2009,2017] }, { "gen": "III", "years": [2017,2026] }] },
+        { "model": "Blazer", "generations": [{ "gen": "I", "years": [2019,2026] }] },
+        { "model": "Camaro", "generations": [{ "gen": "V", "years": [2009,2015] }, { "gen": "VI", "years": [2015,2024] }] }
+      ]
+    },
+    {
+      "brand": "Lancia",
+      "country": "IT",
+      "models": [
+        { "model": "Ypsilon", "generations": [{ "gen": "II", "years": [2003,2011] }, { "gen": "III", "years": [2011,2024] }, { "gen": "IV", "years": [2024,2026] }] },
+        { "model": "Musa", "generations": [{ "gen": "I", "years": [2004,2012] }] },
+        { "model": "Delta", "generations": [{ "gen": "III", "years": [2008,2014] }] },
+        { "model": "Phedra", "generations": [{ "gen": "I", "years": [2002,2010] }] },
+        { "model": "Thesis", "generations": [{ "gen": "I", "years": [2001,2009] }] }
+      ]
+    },
+    {
+      "brand": "Smart",
+      "country": "DE",
+      "models": [
+        { "model": "ForTwo", "generations": [{ "gen": "I (450)", "years": [1998,2007] }, { "gen": "II (451)", "years": [2007,2014] }, { "gen": "III (453)", "years": [2014,2023] }] },
+        { "model": "ForFour", "generations": [{ "gen": "I (454)", "years": [2004,2006] }, { "gen": "II (453)", "years": [2014,2023] }] },
+        { "model": "#1", "generations": [{ "gen": "I", "years": [2022,2026] }] },
+        { "model": "#3", "generations": [{ "gen": "I", "years": [2023,2026] }] }
+      ]
+    },
+    {
+      "brand": "Lexus",
+      "country": "JP",
+      "models": [
+        { "model": "IS", "generations": [{ "gen": "II (XE20)", "years": [2005,2013] }, { "gen": "III (XE30)", "years": [2013,2026] }] },
+        { "model": "ES", "generations": [{ "gen": "VI (XV60)", "years": [2012,2018] }, { "gen": "VII (AXZH10)", "years": [2018,2026] }] },
+        { "model": "GS", "generations": [{ "gen": "IV (L10)", "years": [2011,2020] }] },
+        { "model": "LS", "generations": [{ "gen": "IV (F40)", "years": [2006,2017] }, { "gen": "V (F50)", "years": [2017,2026] }] },
+        { "model": "NX", "generations": [{ "gen": "I (AZ10)", "years": [2014,2021] }, { "gen": "II (AZ20)", "years": [2021,2026] }] },
+        { "model": "RX", "generations": [{ "gen": "III (AL10)", "years": [2009,2015] }, { "gen": "IV (AL20)", "years": [2015,2022] }, { "gen": "V (AL30)", "years": [2022,2026] }] },
+        { "model": "UX", "generations": [{ "gen": "I (ZA10)", "years": [2018,2026] }] },
+        { "model": "CT", "generations": [{ "gen": "I (ZWA10)", "years": [2011,2020] }] },
+        { "model": "LX", "generations": [{ "gen": "II (J200)", "years": [2007,2021] }, { "gen": "III (J300)", "years": [2021,2026] }] }
+      ]
+    },
+    {
+      "brand": "Jaguar",
+      "country": "GB",
+      "models": [
+        { "model": "XE", "generations": [{ "gen": "X760", "years": [2015,2026] }] },
+        { "model": "XF", "generations": [{ "gen": "X250", "years": [2007,2015] }, { "gen": "X260", "years": [2015,2026] }] },
+        { "model": "XJ", "generations": [{ "gen": "X350", "years": [2003,2009] }, { "gen": "X351", "years": [2009,2019] }] },
+        { "model": "E-Pace", "generations": [{ "gen": "X540", "years": [2017,2026] }] },
+        { "model": "F-Pace", "generations": [{ "gen": "X761", "years": [2016,2026] }] },
+        { "model": "I-Pace", "generations": [{ "gen": "X590", "years": [2018,2026] }] },
+        { "model": "F-Type", "generations": [{ "gen": "X152", "years": [2013,2024] }] }
+      ]
+    },
+    {
+      "brand": "Dodge",
+      "country": "US",
+      "models": [
+        { "model": "Journey", "generations": [{ "gen": "I (JC)", "years": [2008,2020] }] },
+        { "model": "Caliber", "generations": [{ "gen": "I (PM)", "years": [2006,2012] }] },
+        { "model": "Avenger", "generations": [{ "gen": "II (JS)", "years": [2007,2014] }] },
+        { "model": "Charger", "generations": [{ "gen": "VII (LD)", "years": [2010,2023] }] },
+        { "model": "Challenger", "generations": [{ "gen": "III (LC)", "years": [2008,2023] }] },
+        { "model": "Durango", "generations": [{ "gen": "III (WD)", "years": [2010,2026] }] }
+      ]
+    },
+    {
+      "brand": "Chrysler",
+      "country": "US",
+      "models": [
+        { "model": "300C", "generations": [{ "gen": "I (LX)", "years": [2004,2011] }, { "gen": "II (LD)", "years": [2011,2023] }] },
+        { "model": "Voyager / Grand Voyager", "generations": [{ "gen": "IV (RS)", "years": [2000,2008] }, { "gen": "V (RT)", "years": [2008,2016] }] },
+        { "model": "PT Cruiser", "generations": [{ "gen": "I (PT)", "years": [2000,2010] }] }
+      ]
+    },
+    {
+      "brand": "Isuzu",
+      "country": "JP",
+      "models": [
+        { "model": "D-Max", "generations": [{ "gen": "I", "years": [2002,2012] }, { "gen": "II", "years": [2012,2020] }, { "gen": "III", "years": [2020,2026] }] },
+        { "model": "MU-X", "generations": [{ "gen": "I", "years": [2013,2021] }, { "gen": "II", "years": [2021,2026] }] },
+        { "model": "Trooper", "generations": [{ "gen": "II", "years": [1991,2002] }] }
+      ]
+    },
+    {
+      "brand": "Lada",
+      "country": "RU",
+      "models": [
+        { "model": "Niva / 4x4", "generations": [{ "gen": "I", "years": [1977,2026] }] },
+        { "model": "Niva Travel (Chevy Niva)", "generations": [{ "gen": "I", "years": [2002,2021] }] },
+        { "model": "Granta", "generations": [{ "gen": "I", "years": [2011,2018] }, { "gen": "II", "years": [2018,2026] }] },
+        { "model": "Vesta", "generations": [{ "gen": "I", "years": [2015,2026] }] },
+        { "model": "Largus", "generations": [{ "gen": "I", "years": [2012,2026] }] },
+        { "model": "2107 / Riva", "generations": [{ "gen": "-", "years": [1982,2012] }] },
+        { "model": "Samara (2108/2109)", "generations": [{ "gen": "-", "years": [1984,2013] }] }
+      ]
+    },
+    {
+      "brand": "Polestar",
+      "country": "SE",
+      "models": [
+        { "model": "Polestar 2", "generations": [{ "gen": "I", "years": [2020,2026] }] },
+        { "model": "Polestar 3", "generations": [{ "gen": "I", "years": [2023,2026] }] },
+        { "model": "Polestar 4", "generations": [{ "gen": "I", "years": [2024,2026] }] }
+      ]
+    },
+    {
+      "brand": "Infiniti",
+      "country": "JP",
+      "models": [
+        { "model": "Q30 / QX30", "generations": [{ "gen": "I", "years": [2015,2019] }] },
+        { "model": "Q50", "generations": [{ "gen": "I", "years": [2013,2026] }] },
+        { "model": "Q60", "generations": [{ "gen": "II", "years": [2016,2022] }] },
+        { "model": "QX50", "generations": [{ "gen": "I (EX)", "years": [2008,2018] }, { "gen": "II", "years": [2018,2026] }] },
+        { "model": "QX70 (FX)", "generations": [{ "gen": "II", "years": [2008,2017] }] },
+        { "model": "QX80 (QX56)", "generations": [{ "gen": "I", "years": [2004,2013] }, { "gen": "II", "years": [2013,2026] }] }
+      ]
+    },
+    {
+      "brand": "Haval",
+      "country": "CN",
+      "models": [
+        { "model": "H6", "generations": [{ "gen": "I", "years": [2011,2017] }, { "gen": "II", "years": [2017,2021] }, { "gen": "III", "years": [2021,2026] }] },
+        { "model": "H2", "generations": [{ "gen": "I", "years": [2014,2021] }] },
+        { "model": "Jolion", "generations": [{ "gen": "I", "years": [2021,2026] }] },
+        { "model": "Dargo", "generations": [{ "gen": "I", "years": [2021,2026] }] }
+      ]
+    },
+    {
+      "brand": "Omoda / Chery",
+      "country": "CN",
+      "models": [
+        { "model": "Omoda 5", "generations": [{ "gen": "I", "years": [2022,2026] }] },
+        { "model": "Tiggo 4", "generations": [{ "gen": "I", "years": [2017,2026] }] },
+        { "model": "Tiggo 7", "generations": [{ "gen": "I", "years": [2016,2026] }] },
+        { "model": "Tiggo 8", "generations": [{ "gen": "I", "years": [2018,2026] }] }
+      ]
+    },
+    {
+      "brand": "Geely / Lynk & Co",
+      "country": "CN",
+      "models": [
+        { "model": "Lynk & Co 01", "generations": [{ "gen": "I", "years": [2018,2026] }] },
+        { "model": "Lynk & Co 02", "generations": [{ "gen": "I", "years": [2018,2026] }] },
+        { "model": "Emgrand", "generations": [{ "gen": "I", "years": [2009,2018] }, { "gen": "II", "years": [2018,2026] }] }
+      ]
+    }
+  ],
+  "stats": {
+    "total_brands": 46,
+    "total_models": 430,
+    "total_generations": 870
+  }
+}
