@@ -397,8 +397,6 @@
   </div>
 </footer>
 
-<!-- Hidden iframe pentru Google Forms (evită CORS complet) -->
-<iframe id="google-iframe" name="google-iframe" style="display:none;" aria-hidden="true"></iframe>
 
 <!-- ═══════════════════════════════════════════ JAVASCRIPT -->
 <script>
@@ -441,14 +439,14 @@
     });
   });
 
-  // Form submission → Google Forms via hidden iframe (dynamic form creation)
+  // Form submission → Google Apps Script → Google Sheet
   const form = document.getElementById('lead-form');
   const formState = document.getElementById('form-state');
   const successState = document.getElementById('success-state');
   const formError = document.getElementById('form-error');
-  const GFORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSfknDzJBHNG8fbERTutNKPnuU8XcWTe0MDglWDnCDKHrCdo-Q/formResponse';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbznZDtlC6vtnd7gqe4uckqvhTixDl67yQ8-fxd3HpjmKFSltXVqr3WMROPJvM5vQvMelA/exec';
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
     const nume = data.get('nume')?.trim();
@@ -465,53 +463,30 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Se trimite...';
 
-    // Construim form nou la fiecare submit (garanție că valorile sunt corecte)
-    const gf = document.createElement('form');
-    gf.method = 'POST';
-    gf.action = GFORM_ACTION;
-    gf.target = 'google-iframe';
-    gf.style.display = 'none';
-
-    const fields = {
-      'fvv': '1',
-      'pageHistory': '0',
-      'entry.1767267555': nume,
-      'entry.114646313': telefon,
-      'entry.464810925': data.get('afacere') || '',
-      'entry.837276758': data.get('logo') || '',
-      'entry.298934520': data.get('stil') || '',
-      'entry.1295564356': data.get('poze') || '',
-      'entry.619801713': data.get('termen') || '',
-      'entry.250789901': data.get('altceva') || '',
+    const payload = {
+      nume,
+      telefon,
+      afacere: data.get('afacere') || '',
+      logo: data.get('logo') || '',
+      stil: data.get('stil') || '',
+      pagini: data.getAll('pagini').join(', '),
+      poze: data.get('poze') || '',
+      termen: data.get('termen') || '',
+      altceva: data.get('altceva') || '',
     };
 
-    Object.entries(fields).forEach(([name, value]) => {
-      const inp = document.createElement('input');
-      inp.type = 'hidden';
-      inp.name = name;
-      inp.value = value;
-      gf.appendChild(inp);
-    });
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(payload),
+      });
+    } catch (_) {}
 
-    // Pagini (checkbox) — un input per valoare bifată
-    data.getAll('pagini').forEach(p => {
-      const inp = document.createElement('input');
-      inp.type = 'hidden';
-      inp.name = 'entry.128083777';
-      inp.value = p;
-      gf.appendChild(inp);
-    });
-
-    document.body.appendChild(gf);
-    gf.submit();
-    setTimeout(() => document.body.removeChild(gf), 3000);
-
-    // Afișăm succesul după 800ms
-    setTimeout(() => {
-      formState.style.display = 'none';
-      successState.style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 800);
+    formState.style.display = 'none';
+    successState.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
 
