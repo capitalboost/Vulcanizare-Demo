@@ -168,7 +168,7 @@
     }
 
     @media (max-width: 768px) {
-      .desktop-nav { display: none; }
+      .desktop-nav { display: none !important; }
     }
     @media (min-width: 769px) {
       #hamburger { display: none; }
@@ -476,7 +476,7 @@
 
 <!-- ═══════════════════════════════════════════ STATS -->
 <section style="background:#111111;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:clamp(48px,8vw,80px) clamp(16px,4vw,48px);">
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;text-align:center;align-items:start;">
+  <div class="stats-grid" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;text-align:center;align-items:start;">
     <div class="reveal reveal-d1">
       <div class="stat-num" data-target="500">0</div>
       <p style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#6B7280;margin:8px 0 0;">Clienți Mulțumiți</p>
@@ -822,6 +822,8 @@
     .why-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
     .calc-cta-grid { grid-template-columns: 1fr !important; }
     .calc-cta-grid > div:last-child { align-items: flex-start !important; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
+    .footer-grid > div:first-child { grid-column: 1 / -1; }
   }
 </style>
 
