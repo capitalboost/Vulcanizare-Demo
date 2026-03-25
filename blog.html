@@ -65,6 +65,8 @@
 
     #mobile-menu{display:none}
     #mobile-menu.open{display:flex}
+    @keyframes cta-glow{0%,100%{box-shadow:0 4px 20px rgba(220,38,38,.4),0 1px 3px rgba(0,0,0,.4)}50%{box-shadow:0 6px 36px rgba(220,38,38,.72),0 0 24px rgba(220,38,38,.22)}}
+    .cta-pulse{animation:cta-glow 2.4s ease-in-out infinite}
     @media(max-width:768px){.desktop-nav{display:none!important}.featured-card{grid-template-columns:1fr!important}}
     @media(min-width:769px){#hamburger{display:none!important}}
   </style>
@@ -85,7 +87,7 @@
     <a href="https://calendar.app.google/xTjed3aemuz4DrJy6" target="_blank" rel="noopener" class="nav-link" style="color:#DC2626;" onmouseover="this.style.color='#EF4444'" onmouseout="this.style.color='#DC2626'">Programare ↗</a>
   </div>
   <div style="display:flex;align-items:center;gap:12px;">
-    <a href="comanda.html" class="btn-red desktop-nav" style="padding:10px 20px;font-size:13px;">Vreau un website!</a>
+    <a href="comanda.html" class="btn-red desktop-nav cta-pulse" style="padding:10px 20px;font-size:13px;">Vreau un website!</a>
     <button id="hamburger" style="background:none;border:none;cursor:pointer;padding:4px;color:#F5F5F5;" aria-label="Meniu" aria-expanded="false">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
