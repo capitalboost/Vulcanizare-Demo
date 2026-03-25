@@ -397,6 +397,20 @@
   </div>
 </footer>
 
+<!-- Hidden iframe + form pentru Google Forms (evită CORS complet) -->
+<iframe name="google-iframe" style="display:none;" aria-hidden="true"></iframe>
+<form id="google-proxy-form" method="POST" target="google-iframe" style="display:none;"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSfknDzJBHNG8fbERTutNKPnuU8XcWTe0MDglWDnCDKHrCdo-Q/formResponse">
+  <input type="hidden" name="entry.1767267555" />
+  <input type="hidden" name="entry.114646313" />
+  <input type="hidden" name="entry.464810925" />
+  <input type="hidden" name="entry.837276758" />
+  <input type="hidden" name="entry.298934520" />
+  <input type="hidden" name="entry.1295564356" />
+  <input type="hidden" name="entry.619801713" />
+  <input type="hidden" name="entry.250789901" />
+</form>
+
 <!-- ═══════════════════════════════════════════ JAVASCRIPT -->
 <script>
   // Navbar scroll
@@ -438,15 +452,15 @@
     });
   });
 
-  // Form submission → Google Forms
-  const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfknDzJBHNG8fbERTutNKPnuU8XcWTe0MDglWDnCDKHrCdo-Q/formResponse';
-
+  // Form submission → Google Forms via hidden iframe
+  // (fetch no-cors strips body in some browsers — iframe submission este garantat)
   const form = document.getElementById('lead-form');
   const formState = document.getElementById('form-state');
   const successState = document.getElementById('success-state');
   const formError = document.getElementById('form-error');
+  const gForm = document.getElementById('google-proxy-form');
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = new FormData(form);
     const nume = data.get('nume')?.trim();
@@ -463,30 +477,36 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Se trimite...';
 
-    // Construim payload-ul pentru Google Forms
-    const payload = new URLSearchParams();
-    payload.append('entry.1767267555', nume);
-    payload.append('entry.114646313', telefon);
-    payload.append('entry.837276758', data.get('logo') || '');
-    payload.append('entry.298934520', data.get('stil') || '');
-    // Checkboxes — fiecare valoare se trimite separat
-    data.getAll('pagini').forEach(p => payload.append('entry.128083777', p));
-    payload.append('entry.464810925', data.get('afacere') || '');
-    payload.append('entry.1295564356', data.get('poze') || '');
-    payload.append('entry.619801713', data.get('termen') || '');
-    payload.append('entry.250789901', data.get('altceva') || '');
+    // Populăm hidden form-ul cu datele colectate
+    gForm.querySelector('[name="entry.1767267555"]').value = nume;
+    gForm.querySelector('[name="entry.114646313"]').value = telefon;
+    gForm.querySelector('[name="entry.464810925"]').value = data.get('afacere') || '';
+    gForm.querySelector('[name="entry.837276758"]').value = data.get('logo') || '';
+    gForm.querySelector('[name="entry.298934520"]').value = data.get('stil') || '';
+    gForm.querySelector('[name="entry.1295564356"]').value = data.get('poze') || '';
+    gForm.querySelector('[name="entry.619801713"]').value = data.get('termen') || '';
+    gForm.querySelector('[name="entry.250789901"]').value = data.get('altceva') || '';
 
-    // no-cors: Google Forms blochează CORS dar submisia ajunge — arătăm succes direct
-    await fetch(GOOGLE_FORM_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: payload.toString()
+    // Pagini (checkbox) — adăugăm dinamic câte un input per valoare bifată
+    gForm.querySelectorAll('[data-pagini]').forEach(el => el.remove());
+    data.getAll('pagini').forEach(p => {
+      const inp = document.createElement('input');
+      inp.type = 'hidden';
+      inp.name = 'entry.128083777';
+      inp.value = p;
+      inp.setAttribute('data-pagini', '1');
+      gForm.appendChild(inp);
     });
 
-    formState.style.display = 'none';
-    successState.style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Trimitem nativ — browserul face POST direct, fără CORS
+    gForm.submit();
+
+    // Afișăm succesul după 600ms (cât durează submisia)
+    setTimeout(() => {
+      formState.style.display = 'none';
+      successState.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 600);
   });
 </script>
 
