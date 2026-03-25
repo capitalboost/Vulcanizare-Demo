@@ -471,13 +471,10 @@
     payload.append('entry.298934520', data.get('stil') || '');
     // Checkboxes — fiecare valoare se trimite separat
     data.getAll('pagini').forEach(p => payload.append('entry.128083777', p));
+    payload.append('entry.464810925', data.get('afacere') || '');
     payload.append('entry.1295564356', data.get('poze') || '');
     payload.append('entry.619801713', data.get('termen') || '');
-    // Afacere + Altceva combinate (Google Form nu are câmp separat pentru Afacere)
-    const afacere = data.get('afacere')?.trim();
-    const altceva = data.get('altceva')?.trim();
-    const notite = [afacere ? `Afacere: ${afacere}` : '', altceva].filter(Boolean).join('\n\n');
-    payload.append('entry.250789901', notite);
+    payload.append('entry.250789901', data.get('altceva') || '');
 
     // no-cors: Google Forms blochează CORS dar submisia ajunge — arătăm succes direct
     await fetch(GOOGLE_FORM_URL, {
