@@ -157,9 +157,7 @@
 
     <!-- FORM STATE -->
     <div id="form-state">
-      <!-- NOTE: Replace the action URL below with your Formspree endpoint -->
-      <!-- Sign up at formspree.io, create a form, and paste your endpoint here -->
-      <form id="lead-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <form id="lead-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfknDzJBHNG8fbERTutNKPnuU8XcWTe0MDglWDnCDKHrCdo-Q/formResponse" method="POST" novalidate>
 
         <!-- Q1 -->
         <div class="q-card reveal" style="margin-bottom:16px;">
@@ -440,7 +438,9 @@
     });
   });
 
-  // Form submission
+  // Form submission → Google Forms
+  const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfknDzJBHNG8fbERTutNKPnuU8XcWTe0MDglWDnCDKHrCdo-Q/formResponse';
+
   const form = document.getElementById('lead-form');
   const formState = document.getElementById('form-state');
   const successState = document.getElementById('success-state');
@@ -463,25 +463,33 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Se trimite...';
 
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        formState.style.display = 'none';
-        successState.style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        throw new Error('Server error');
-      }
-    } catch {
-      // Fallback: show success anyway (form can be configured later)
-      formState.style.display = 'none';
-      successState.style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    // Construim payload-ul pentru Google Forms
+    const payload = new URLSearchParams();
+    payload.append('entry.1767267555', nume);
+    payload.append('entry.114646313', telefon);
+    payload.append('entry.837276758', data.get('logo') || '');
+    payload.append('entry.298934520', data.get('stil') || '');
+    // Checkboxes — fiecare valoare se trimite separat
+    data.getAll('pagini').forEach(p => payload.append('entry.128083777', p));
+    payload.append('entry.1295564356', data.get('poze') || '');
+    payload.append('entry.619801713', data.get('termen') || '');
+    // Afacere + Altceva combinate (Google Form nu are câmp separat pentru Afacere)
+    const afacere = data.get('afacere')?.trim();
+    const altceva = data.get('altceva')?.trim();
+    const notite = [afacere ? `Afacere: ${afacere}` : '', altceva].filter(Boolean).join('\n\n');
+    payload.append('entry.250789901', notite);
+
+    // no-cors: Google Forms blochează CORS dar submisia ajunge — arătăm succes direct
+    await fetch(GOOGLE_FORM_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: payload.toString()
+    });
+
+    formState.style.display = 'none';
+    successState.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
 
