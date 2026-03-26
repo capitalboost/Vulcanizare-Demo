@@ -160,6 +160,8 @@
     #mobile-menu.open { display: flex; }
     @keyframes cta-glow{0%,100%{box-shadow:0 4px 20px rgba(220,38,38,.4),0 1px 3px rgba(0,0,0,.4)}50%{box-shadow:0 6px 36px rgba(220,38,38,.72),0 0 24px rgba(220,38,38,.22)}}
     .cta-pulse{animation:cta-glow 2.4s ease-in-out infinite}
+    @keyframes ghost-pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,245,245,0);border-color:rgba(245,245,245,.55)}50%{box-shadow:0 0 0 6px rgba(245,245,245,.08),0 0 18px rgba(245,245,245,.15);border-color:rgba(245,245,245,.9)}}
+    @media(max-width:768px){.hero-cta-ghost{animation:ghost-pulse 2.2s ease-in-out infinite}.mobile-menu-cta{animation:cta-glow 2.2s ease-in-out infinite}}
 
     /* ── Noise overlay ── */
     .noise::after {
@@ -225,7 +227,7 @@
   <a href="tarife.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;">Tarife</a>
   <a href="blog.html" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#F5F5F5;text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;">Blog</a>
   <a href="https://calendar.app.google/xTjed3aemuz4DrJy6" target="_blank" rel="noopener" style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:#DC2626;text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;">Programare ↗</a>
-  <a href="comanda.html" class="btn-red" style="margin-top:8px;font-size:16px;padding:14px 32px;">Vreau un website!</a>
+  <a href="comanda.html" class="btn-red mobile-menu-cta" style="margin-top:8px;font-size:16px;padding:14px 32px;">Vreau un website!</a>
 </div>
 
 <!-- ═══════════════════════════════════════════ HERO -->
@@ -267,7 +269,7 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3"/><path d="M9 15h3l8.5-8.5a1.5 1.5 0 00-3-3L9 12v3z"/></svg>
           Calculează Prețul
         </a>
-        <a href="comanda.html" class="btn-ghost" style="font-size:15px;padding:14px 31px;">Vreau un website așa! →</a>
+        <a href="comanda.html" class="btn-ghost hero-cta-ghost" style="font-size:15px;padding:14px 31px;">Vreau un website așa! →</a>
         <a href="servicii.html" class="btn-ghost" style="font-size:15px;padding:14px 31px;">Toate Serviciile →</a>
       </div>
 
